@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kintar - Belajar Inklusif Interaktif</title>
+  <link rel="stylesheet" href="Kintar.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <style>
+    .filter-kategori {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .filter-kategori button {
+      margin: 5px;
+      padding: 8px 16px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .filter-kategori button:hover {
+      background-color: #2c80b4;
+    }
+
+    .produk-kintar {
+      padding: 40px 20px;
+      background-color: #f8f9fa;
+      text-align: center;
+    }
+
+    .produk-kintar h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    /* Scroll wrapper */
+    .produk-scroll-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Container scroll */
+    .produk-grid {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 20px 10px;
+    }
+
+    .produk-item {
+      flex: 0 0 auto;
+      width: 160px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      transition: transform 0.2s ease;
+    }
+
+    .produk-item:hover {
+      transform: scale(1.05);
+    }
+
+    .produk-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    /* Scroll buttons */
+    .scroll-btn {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 20px;
+      transition: background 0.3s ease;
+      z-index: 10;
+    }
+
+    .scroll-btn:hover {
+      background-color: #2980b9;
+    }
+
+    .scroll-btn.left {
+      margin-right: 5px;
+    }
+
+    .scroll-btn.right {
+      margin-left: 5px;
+    }
+    .games-kintar {
+  padding: 40px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.games-kintar h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.games-scroll-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.games-grid {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 40px;
+}
+
+.game-item {
+  flex: 0 0 auto;
+  width: 180px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.game-item:hover {
+  transform: scale(1.05);
+}
+
+.game-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.game-item p {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.game-item span {
+  font-weight: normal;
+  font-size: 12px;
+  color: #555;
+}
+  </style>
+</head>
+
+<body>
+  <nav>
+    <!-- Logo di kiri -->
+    <div class="nav-logo">
+      <img src="Kintar3.jpeg" alt="Logo Kintar" />
+    </div>
+
+    <!-- Tombol hamburger -->
+    <div class="menu-toggle" id="menuToggle">☰</div>
+
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Navigasi -->
+    <ul class="nav-list-container" id="navLinks">
+      <li class="nav-list"><a href="index.html">Home</a></li>
+      <li class="nav-list"><a href="Tentang.html">Tentang Website</a></li>
+      <li class="nav-list"><a href="Hubungi.html">Hubungi Saya</a></li>
+      <li class="nav-list"><a href="produk.html">Produk</a></li>
+      <li class="nav-list"><a href="penggunaan.html">Pengunaan</a></li>
+    </ul>
+  </nav>
+
+  
+  <!-- Produk Kintar -->
+  <section class="produk-kintar" id="produk">
+    
+    <h2>KINTAR (Karakteristik dan Klasifikasi Hewan)</h2>
+<div class="filter-kategori">
+    <button onclick="filterKartu('semua')">Semua</button>
+    <button onclick="filterKartu('kategori-rumah')">🏡 Peliharaan</button>
+    <button onclick="filterKartu('kategori-hutan')">🌳 Hutan</button>
+    <button onclick="filterKartu('kategori-air')">🌊 Air</button>
+  </div>
+    <!-- Tombol scroll -->
+    <div class="produk-scroll-wrapper">
+      <button class="scroll-btn left" onclick="scrollProduk(-1)">&#10094;</button>
+
+      <!-- Container scroll -->
+      <div class="produk-grid" id="produkContainer">
+
+        <!-- Hewan Hutan -->
+        <div class="produk-item kategori-hutan">
+          <a href="Kintar_harimau.html" target="_blank">
+            <img src="Kartu_Harimau.jpeg" alt="Kartu Harimau" />
+          </a>
+        </div>
+        <div class="produk-item kategori-hutan">
+          <a href="Kintar_Singa.html" target="_blank">
+            <img src="Kartu_Singa.jpeg" alt="Kartu Singa" />
+          </a>
+        </div>
+        <div class="produk-item kategori-hutan">
+          <a href="Kintar_Zebra.html" target="_blank">
+            <img src="Kartu_Zebra.jpeg" alt="Kartu Zebra" />
+          </a>
+        </div>
+        <div class="produk-item kategori-hutan">
+<a href="Kintar_Elang.html" target="_blank">
+            <img src="Kartu_Elang.jpeg" alt="Kartu Elang" />
+          </a>
+        </div>
+        <div class="produk-item kategori-hutan">
+ <a href="kintar_kakak_tua.html" target="_blank">
+            <img src="Kartu_Kakak_Tua.jpeg" alt="Kartu Kakak Tua" />
+          </a>
+        </div>
+        <!-- Hewan Rumah -->
+        <div class="produk-item kategori-rumah">
+          <a href="Kintar_bebek.html" target="_blank">
+            <img src="Kartu_bebek.jpeg" alt="Kartu Bebek" />
+          </a>
+        </div>
+        <div class="produk-item kategori-rumah">
+          <a href="Kintar_Kucing.html" target="_blank">
+            <img src="Kartu_Kucing.jpeg" alt="kartu kucing" />
+          </a>
+        </div>
+        <div class="produk-item kategori-rumah">
+          <a href="Kintar_Ayam.html" target="_blank">
+            <img src="" alt="kartu ayam" />
+          </a>
+        </div>
+        <div class="produk-item kategori-rumah">
+          <a href="Kintar_ikan_badut.html" target="_blank">
+            <img src="Kartu_Ikan_Badut.jpeg" alt="kartu ikan" />
+          </a>
+        </div>
+        <div class="produk-item kategori-rumah">
+          <a href="Kintar_burung.html" target="_blank">
+            <img src="" alt="kartu burung" />
+          </a>
+        </div>
+
+        <!-- Hewan Laut -->
+        
+        <div class="produk-item kategori-air">
+          <a href="kintar_mola.html" target="_blank">
+            <img src="Kartu_Mola2.jpeg" alt="Kartu Mola-mola" />
+          </a>
+        </div>
+        <div class="produk-item kategori-air">
+          <a href="kintar_hiu.html" target="_blank">
+            <img src="Kartu_Hiu.jpeg" alt="Kartu Hiu" />
+          </a>
+        </div>
+        <div class="produk-item kategori-air">
+          <a href="kintar_lumba.html" target="_blank">
+            <img src="Kartu_Lumba.jpeg" alt="Kartu Lumba-lumba" />
+          </a>
+        </div>
+        <button class="scroll-btn right" onclick="scrollProduk(1)">&#10095;</button>
+      </div>
+    </div>
+
+    </div>
+  </section>
+<!-- Games Puzzle -->
+<section class="games-kintar" id="games">
+  <h2>Games Puzzle Hewan</h2>
+
+  <div class="games-scroll-wrapper">
+    <button class="scroll-btn left" onclick="scrollGames(-1)">&#10094;</button>
+
+    <div class="games-grid" id="gamesContainer">
+
+      <div class="game-item">
+        <a href="https://jigex.com/EBqvR" target="_blank">
+          <img src="https://i0.wp.com/starfarm.co.id/wp-content/uploads/2021/07/bebek-muscovy.jpeg?resize=600%2C393&ssl=1" alt="Puzzle Bebek">
+        </a>
+        <p>Puzzle Bebek</p>
+      </div>
+
+      <div class="game-item">
+        <a href="game_puzzle_ikan.html" target="_blank">
+          <img src="https://tse1.mm.bing.net/th/id/OIP.1NmTr2UA_5ladGOU0tQD5gHaEK?pid=Api&P=0&h=180" alt="Puzzle Ikan">
+        </a>
+        <p>Puzzle Ikan</p>
+      </div>
+
+     <div class="game-item">
+        <a href="https://jigex.com/9yDHP" target="_blank">
+          <img src="https://2.bp.blogspot.com/-v-IiaBIM6kw/WCO3EswTkjI/AAAAAAAAAic/f6WMbTjnwlIJLxS1DBCyKC_c16Ue_i3sACEw/s1600/ayam%2Bkampung.jpg" alt="Puzzle Ayam">
+        </a>
+        <p>puzzle ayam</p>
+      </div>
+      <div class="game-item">
+        <a href="https://jigex.com/bXtrN" target="_blank">
+          <img src="https://1.bp.blogspot.com/-JOXX3TERG1E/V5bN7LXqtFI/AAAAAAAACSk/HG4CWLzPdIA7mCMRAol8QEMfqb6FXGjCgCLcB/s1600/Gambar-kucing-11.JPG" alt="Puzzle Kucing">
+        </a>
+        <p>puzzle kucing</p>
+      </div>
+      <div class="game-item">
+        <a href="https://jigex.com/aSGpF" target="_blank">
+          <img src="https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2022/08/20/3124445522.jpg" alt="puzzle burung">
+        </a>
+        <p>puzzle burung</p>
+      </div>
+      <div class="game-item">
+        <a href="https://jigex.com/aBs6o" target="_blank">
+          <img src="https://mapelweb.com/wp-content/uploads/2021/02/000225-06_jenis-jenis-burung-kakak-tua_koki_800x450_cc0-min.jpg" alt="Puzzle Kakak Tua">
+        </a>
+        <p>puzzle burung kakak tua</p>
+      </div>
+      <div class="game-item">
+        <a href="https://jigex.com/ShkvN" target="_blank">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.AwRc9rPsxj6HkW_VDczxNwHaEb?pid=Api&P=0&h=180" alt="Puzzle Singa">
+        </a>
+        <p>puzzle singa</p>
+      </div>
+      <div class="game-item">
+        <a href="https://jigex.com/rX2rV" target="_blank">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.f7Xaw0qPr9jaDLyH61lXuQHaFU?pid=Api&P=0&h=180" alt="Puzzle Harimau">
+        </a>
+        <p>Puzzle Harimau</p>
+      </div>
+    </div>
+
+    <button class="scroll-btn right" onclick="scrollGames(1)">&#10095;</button>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 KINTAR - Kartu Interaktif Pintar. Dibuat oleh Taufik Hidayat - Mahasiswa UNTIRTA</p>
+    <div class="sosmed">
+      <a href="https://facebook.com/taufik.hidayat.416718" target="_blank"><img
+          src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+      <a href="https://instagram.com/kiposis_official" target="_blank"><img
+          src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+      <a href="https://wa.me/082258038059" target="_blank"><img
+          src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+      <a href="mailto:taufikkipo3@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+          alt="Gmail"></a>
+    </div>
+  </footer>
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    const overlay = document.getElementById("overlay");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      overlay.classList.toggle("active");
+    });
+
+    overlay.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      overlay.classList.remove("active");
+    });
+    //submenu
+    document.querySelectorAll(".nav-list > a").forEach((menuItem) => {
+      menuItem.addEventListener("click", function (e) {
+        // Cek apakah ada submenu
+        const parent = this.parentElement;
+        const submenu = parent.querySelector("ul");
+
+        if (submenu) {
+          e.preventDefault(); // Cegah link utama langsung terbuka
+          parent.classList.toggle("open");
+
+          // Tutup submenu lain
+          document.querySelectorAll(".nav-list").forEach((item) => {
+            if (item !== parent) {
+              item.classList.remove("open");
+            }
+          });
+        }
+      });
+    });
+
+    // Klik di luar navigasi untuk menutup semua submenu
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".nav-list")) {
+        document.querySelectorAll(".nav-list").forEach((item) => {
+          item.classList.remove("open");
+        });
+      }
+    });
+
+    //produk kintar
+    function scrollProduk(direction) {
+      const container = document.getElementById("produkContainer");
+      const scrollAmount = 200; // jumlah piksel per klik
+      container.scrollBy({
+        left: direction * scrollAmount,
+        behavior: "smooth",
+      });
+    }
+    function filterKartu(kategori) {
+      const semuaKartu = document.querySelectorAll(".produk-item");
+      semuaKartu.forEach((kartu) => {
+        if (kategori === "semua") {
+          kartu.style.display = "block";
+        } else {
+          if (kartu.classList.contains(kategori)) {
+            kartu.style.display = "block";
+          } else {
+            kartu.style.display = "none";
+          }
+        }
+      });
+    }
+    function scrollProduk(direction) {
+      const container = document.getElementById('produkContainer');
+      const scrollAmount = 200 * direction;
+      container.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+     
+  </script>
+</body>
+
+</html>
