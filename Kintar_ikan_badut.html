@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kintar - ikan </title>
+  <link rel="stylesheet" href="bebek.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+
+<body>
+  <div class="utama">
+    <!-- Navigasi -->
+    <header class="nav-container">
+      <div class="nav-logo">
+        <i id="nav-on" class="fa fa-bars" aria-label="Buka Menu"></i>
+      </div>
+    </header>
+
+    <nav id="nav-menu" class="close" aria-label="Menu Navigasi">
+      <div class="nav-menu-action">
+        <h4>KINTAR</h4>
+        <i id="nav-close" class="fa fa-xmark" aria-label="Tutup Menu"></i>
+      </div>
+      <ul class="nav-list-container">
+        <li class="nav-list"><i class="fa fa-house"></i><a href="index.html">Home</a></li>
+        <li class="nav-list"><i class="fa-regular fa-circle-dot"></i><a href="Tentang.html">Tentang Saya</a></li>
+        <li class="nav-list"><i class="fa fa-code-branch"></i><a href="Hubungi.html">Hubungi Saya</a></li>
+      </ul>
+    </nav>
+
+    <!-- Konten -->
+<main class="content">
+
+  <!-- Judul + Gambar + Suara -->
+ <section class="info-step active">
+        <h2 onclick="playAudio('audioJudul')" class="klik-audio">
+          ikan 🐠
+        </h2>
+        <audio id="audioJudul" src=""></audio>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU5r04WWYoDBpjKjfIOjew9cuXws_GRFxpYY_WANUlwA&s=10" 
+        alt="ikan badut" width="50%"
+          onclick="playAudio('audioFoto')" class="klik-audio">
+        <audio id="audioFoto" src=""></audio>
+        <p class="source">
+          sumber gambar:
+          <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU5r04WWYoDBpjKjfIOjew9cuXws_GRFxpYY_WANUlwA&s=10" 
+          target="_blank">pinterst</a>
+        </p>
+
+        <button class="next-btn">▶ lanjut</button>
+      </section>
+      <!-- ================= HALAMAN MENU ================= -->
+      <section id="materi" class="info-step menu-page">
+        <h2>materi ikan</h2>
+
+        <button onclick="goToStepById('tubuh')">bagian tubuh ikan</button>
+        <button onclick="goToStepById('bergerak')">cara bergerak ikan</button>
+        <button onclick="goToStepById('pertumbuhan')">pertumbuhan ikan</button>
+        <button onclick="goToStepById('perkembang')">perkembangan ikan</button>
+        <button onclick="goToStepById('makanan')">makanan ikan</button>
+        <button onclick="goToStepById('soal')">pertanyaan ikan</button>
+        <button class="prev-btn">◀ kembali</button>
+      </section>
+      <!-- Bagian tubuh hewan -->
+      <section id="tubuh" class="info-step menu-page">
+        <h3>bagian tubuh ikan badut</h3>
+
+<div class="ciri-ciri">
+  <img src="sirip ikan badut.jpeg" alt="sirip ikan badut"
+    onclick="playAudio('audioSiripjpg')" class="klik-audio">
+  <audio id="audioSiripjpg" src="sirip ikan badut.mp3"></audio>
+  <span onclick="playAudio('audioSirip')" class="teks-audio">
+    sirip ikan badut membantu berenang
+  </span>
+  <audio id="audioSirip" src="sirip ikan badut mem.mp3"></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="ekor ikan badut.jpeg" alt="ekor ikan badut"
+    onclick="playAudio('audioEkorjpg')" class="klik-audio">
+  <audio id="audioEkorjpg" src="ini ekor ikan badut.mp3"></audio>
+  <span onclick="playAudio('audioEkor')" class="teks-audio">
+    ekor ikan badut membantu bergerak di air
+  </span>
+  <audio id="audioEkor" src="ekor ikan badut memb.mp3"></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="insang ikan badut.jpeg" alt="insang ikan badut"
+    onclick="playAudio('audioInsangjpg')" class="klik-audio">
+  <audio id="audioInsangjpg" src=""></audio>
+  <span onclick="playAudio('audioInsang')" class="teks-audio">
+    insang ikan badut digunakan untuk bernapas di dalam air
+  </span>
+  <audio id="audioInsang" src=""></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="sisik ikan badut.jpeg" alt="sisik ikan badut"
+    onclick="playAudio('audioSisikjpg')" class="klik-audio">
+  <audio id="audioSisikjpg" src=""></audio>
+  <span onclick="playAudio('audioSisik')" class="teks-audio">
+    sisik ikan badut melindungi tubuh
+  </span>
+  <audio id="audioSisik" src=""></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="mata ikan badut.jpeg" alt="mata ikan badut"
+    onclick="playAudio('audioMatajpg')" class="klik-audio">
+  <audio id="audioMatajpg" src="ini mata ikan badut.mp3"></audio>
+  <span onclick="playAudio('audioMata')" class="teks-audio">
+    mata ikan badut untuk melihat
+  </span>
+  <audio id="audioMata" src="mata ikan badut untu.mp3"></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="https://png.pngtree.com/background/20230512/original/pngtree-photo-of-clownfish-on-anemones-with-mouth-open-picture-image_2503743.jpg" 
+  alt="mulut ikan badut"
+    onclick="playAudio('audioMulutjpg')" class="klik-audio">
+  <audio id="audioMulutjpg" src=""></audio>
+  <span onclick="playAudio('audioMulut')" class="teks-audio">
+    mulut ikan badut digunakan untuk makan
+  </span>
+  <audio id="audioMulut" src=""></audio>
+</div>
+
+
+        <div class="nav-btn">
+          <button class="prev-btn">◀ kembali</button>
+          <button class="next-btn">▶ lanjut</button>
+        </div>
+      </section>
+      <!--menu bagian tubuh hewan-->
+      <section id="bagian" class="info-step menu-page">
+        <button onclick="goToStepById('3D')">3D ikan bagian tubuh</button>
+        <button onclick="goToStepById('videobagian')">video bagian tubuh ikan animasi</button>
+        <button class="prev-btn">◀ kembali</button>
+      </section>
+      <!--3D hewan bagian tubuh hewan-->
+      <section id="3D" class="info-step">
+  <h3>3D ikan badut bagian tubuh</h3>
+
+  <iframe
+    title="3D Ikan Badut"
+    src="https://sketchfab.com/models/7fbe6d2ab56c4c6d88a57ed7b24bc8e6/embed"
+    width="100%"
+    height="400"
+    frameborder="0"
+    allow="autoplay; fullscreen; xr-spatial-tracking"
+    allowfullscreen>
+  </iframe>
+
+  <div class="nav-btn">
+    <button class="prev-btn">◀ kembali</button>
+  </div>
+</section>
+
+      <!-- video bagian tubuh hewan -->
+      <section id="videobagian" class="info-step">
+  <h3>video bagian tubuh ikan</h3>
+
+  <iframe
+    width="100%"
+    height="315"
+    src="https://www.youtube.com/embed/z1LXs0MpwFo"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+
+  <p class="source">
+    sumber video:
+    <a href="https://youtu.be/z1LXs0MpwFo" target="_blank">YouTube</a>
+  </p>
+
+  <div class="nav-btn">
+    <button onclick="goToStepById('bagian')">◀ kembali</button>
+  </div>
+</section>
+      <!-- hewan bergerak -->
+      <section id="bergerak" class="info-step">
+        <h3>ikan badut bergerak</h3>
+
+<div class="ciri-ciri">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj1fMM3_IqUpY_D_lul5gIIycSdRaJeNorV3gBqRt47Q&s=10" 
+  alt="ikan badut berenang">
+  <span onclick="playAudio('audioRenang')" class="teks-audio">
+    ikan badut berenang di air
+  </span>
+  <audio id="audioRenang" src="ikan badut berenang .mp3"></audio>
+</div>
+
+
+
+        <div class="nav-btn">
+          <button onclick="goToStepById('materi')" class="prev-btn"> ◀ kembali</button>
+          <button class="next-btn">▶ lanjut</button>
+        </div>
+      </section>
+      <!--menu hewan bergerak-->
+      <section id="bergerakhewan" class="info-step menu-page">
+        <button onclick="goToStepById('videoBerenang')">video ikan berenang</button>
+        <button onclick="goToStepById('videoanimasi')">lagu ikan berenang</button>
+        <button class="prev-btn">◀ kembali</button>
+      </section>
+      <!--hewan bergerak-->
+      <section id="videoBerenang" class="info-step">
+        <h3>video ikan berenang</h3>
+
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/dAWNG7ut0w8" 
+        title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+
+        <p class="source">
+          sumber video:
+          <a href="https://vt.tiktok.com/ZS4P7e7Bd/" target="_blank">tiktok</a>
+        </p>
+
+        <div class="nav-btn">
+          <button class="prev-btn">◀ kembali</button>
+        </div>
+      </section>
+      <!--lagu hewan bergerak-->
+      <section id="videoanimasi" class="info-step">
+        <h3>lagu ikan</h3>
+
+        <iframe width="100%" height="315" src="https://www.youtube.com/watch?v=hmLpapk5Hvg" 
+        title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+
+        <p class="source">
+          sumber video:
+          <a href="" target="_blank">YouTube</a>
+        </p>
+
+        <div class="nav-btn">
+          <button onclick="goToStepById('bergerakhewan')"> ◀ kembali</button>
+        </div>
+      </section>
+
+
+      <!-- pertumbuhan hewan -->
+      <section id="pertumbuhan" class="info-step">
+        <h3>pertumbuhan ikan badut</h3>
+
+<div class="ciri-ciri">
+  <img src="https://media.istockphoto.com/id/964884246/id/foto/telur-ikan-badut.jpg?s=170667a&w=0&k=20&c=UyOlJlIK2LkCB7FyzesunDUtZGN4deGVZGO7b5rpl98=" 
+  alt="telur ikan badut"
+    onclick="playAudio('audioTelurjpg')" class="klik-audio">
+  <audio id="audioTelurjpg" src="ini telur ikan badut.mp3"></audio>
+  <span onclick="playAudio('audioTelur')" class="teks-audio">
+    telur ikan badut akan menetas menjadi larva ikan
+  </span>
+  <audio id="audioTelur" src="telur ikan badut aka.mp3"></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="https://media.istockphoto.com/id/1430282717/id/foto/ikan-badut-sigung-merah-muda.jpg?s=1024x1024&w=is&k=20&c=OPi9TntXvXwWf8VS--g9ceJP_ZaQ6Ed1KmxLrIRzDyY=" 
+  alt="anak ikan badut"
+    onclick="playAudio('audioAnakjpg')" class="klik-audio">
+  <audio id="audioAnakjpg" src="ini anak ikan badut.mp3"></audio>
+  <span onclick="playAudio('audioAnak')" class="teks-audio">
+    anak ikan badut tumbuh menjadi ikan muda
+  </span>
+  <audio id="audioAnak" src="anak ikan badut tumb.mp3"></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="" alt="ikan badut dewasa"
+    onclick="playAudio('audioDewasajpg')" class="klik-audio">
+  <audio id="audioDewasajpg" src="ini ikan badut dewas.mp3"></audio>
+  <span onclick="playAudio('audioDewasa')" class="teks-audio">
+    ikan badut dewasa dapat berkembang biak dan bertelur
+  </span>
+  <audio id="audioDewasa" src="ikan badut dewasa da.mp3"></audio>
+</div>
+
+        <div class="nav-btn">
+          <button onclick="goToStepById('materi')">◀ Kembali</button>
+          <button class="next-btn">▶ lanjut</button>
+        </div>
+      </section>
+      <!--menu pertumbuhan-->
+      <section id="menu-pertumbuhan" class="info-step menu-page">
+        <button onclick="goToStepById('telurmenetas')">video pertumbuhan telur menetas</button>
+        <button onclick="goToStepById('bebekdewasa')">video pertumbuhan anak ikan sampai ikan dewasa</button>
+        <button class="prev-btn">◀ kembali</button>
+      </section>
+      <!--video pertumbuhan telur-->
+      <section id="telurmenetas" class="info-step">
+        <h3>video pertumbuhan telur menetas</h3>
+
+        <iframe width="100%" height="315" src="" 
+        title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+
+        <p class="source">
+          sumber video:
+          <a href="" target="_blank">tiktok</a>
+        </p>
+
+        <div class="nav-btn">
+          <button class="prev-btn">◀ kembali</button>
+        </div>
+      </section>
+      <!--video pertumbuhan bebek-->
+      <section id="bebekdewasa" class="info-step">
+        <h3>video pertumbuhan anak ikan sampai ikan dewasa</h3>
+        <iframe width="100%" height="315" src="" 
+        frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+
+        <p class="source">
+          sumber video:
+          <a href="" target="_blank">tiktok</a>
+        </p>
+        <div class="nav-btn">
+          <button onclick="goToStepById('menu-pertumbuhan')">◀ kembali</button>
+        </div>
+      </section>
+      <!-- makanan hewan -->
+      <section id="makanan" class="info-step">
+        <h3>makanan ikan badut</h3>
+
+<div class="ciri-ciri">
+  <img src="https://png.pngtree.com/png-clipart/20250612/original/pngtree-the-frustrations-of-an-enraged-plankton-in-a-marine-world-full-png-image_21178127.png" alt="plankton"
+    onclick="playAudio('audioPlanktonjpg')" class="teks-audio">
+  <audio id="audioPlanktonjpg" src="ini plankton.mp3"></audio>
+  <span onclick="playAudio('audioPlankton')" class="teks-audio">
+    ikan badut makan plankton
+  </span>
+  <audio id="audioPlankton" src="ikan badut makan pla.mp3"></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="" 
+  alt="udang kecil"
+    onclick="playAudio('audioUdangjpg')" class="teks-audio">
+  <audio id="audioUdangjpg" src="ini udang kecil.mp3"></audio>
+  <span onclick="playAudio('audioUdang')" class="teks-audio">
+    ikan badut makan udang kecil
+  </span>
+  <audio id="audioUdang" src="ikan badut makan uda.mp3"></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="https://www.greeners.co/wp-content/uploads/2022/11/Sandworm-Umpan-Pancing-Favorit-bagi-Para-Nelayan.jpg" 
+  alt="cacing laut"
+    onclick="playAudio('audioCacingjpg')" class="teks-audio">
+  <audio id="audioCacingjpg" src="ini cacing laut.mp3"></audio>
+  <span onclick="playAudio('audioCacing')" class="teks-audio">
+    ikan badut makan cacing laut
+  </span>
+  <audio id="audioCacing" src="ikan badut makan cac.mp3"></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUwaaWRbHR6WU0HN0LX4yRwjFIlvhHm8SLqjely2__iQ&s=10" 
+  alt="alga"
+    onclick="playAudio('audioAlgajpg')" class="teks-audio">
+  <audio id="audioAlgajpg" src="ini alga.mp3"></audio>
+  <span onclick="playAudio('audioAlga')" class="teks-audio">
+    ikan badut makan alga
+  </span>
+  <audio id="audioAlga" src=""></audio>
+</div>
+
+        <div class="nav-btn">
+          <button onclick="goToStepById('materi')">◀ Kembali</button>
+        </div>
+      </section>
+      <!--perkembang biak hewan-->
+      <section id="perkembang" class="info-step">
+        <h3>perkembang biak ikan badut</h3>
+
+<div class="ciri-ciri">
+  <img src="https://media.istockphoto.com/id/964884246/id/foto/telur-ikan-badut.jpg?s=170667a&w=0&k=20&c=UyOlJlIK2LkCB7FyzesunDUtZGN4deGVZGO7b5rpl98=" 
+  alt="ikan badut bertelur"
+    onclick="playAudio('audioTelurjpg')" class="klik-audio">
+  <audio id="audioTelurjpg" src=""></audio>
+  <span onclick="playAudio('audioBertelur')" class="teks-audio">
+    ikan badut berkembang biak dengan bertelur
+  </span>
+  <audio id="audioBertelur" src="ikan badut berkemban.mp3"></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="ikan badut membersihkan.jpg" alt="ikan badut menjaga telur"
+    onclick="playAudio('audioMenjagajpg')" class="klik-audio">
+  <audio id="audioMenjagajpg" src=""></audio>
+  <span onclick="playAudio('audioMenjaga')" class="teks-audio">
+    induk ikan badut menjaga dan membersihkan telur
+  </span>
+  <audio id="audioMenjaga" src="induk ikan badut men.mp3"></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUstTUGICqkePRl2ESPLgvyFJAMq705qwwJqFEfT6TXUoE6v6pF7LboHev&s=10" 
+  alt="telur ikan badut menetas"
+    onclick="playAudio('audioMenetasjpg')" class="klik-audio">
+  <audio id="audioMenetasjpg" src=""></audio>
+  <span onclick="playAudio('audioMenetas')" class="teks-audio">
+    telur menetas menjadi anak ikan badut
+  </span>
+  <audio id="audioMenetas" src="telur menetas menjad.mp3"></audio>
+</div>
+
+
+        <div class="nav-btn">
+          <button onclick="goToStepById('materi')">◀ Kembali</button>
+          <button class="next-btn">▶ Lanjut</button>
+        </div>
+      </section>
+      <!--video perkembang biak hewan-->
+      <section class="info-step">
+        <h3>video ikan bertelur</h3>
+        <iframe width="100%" height="315" src="" 
+        frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        <p class="source">
+          sumber video:
+          <a href="" target="_blank">tiktok</a>
+        </p>
+        <div class="nav-btn">
+          <button onclick="stopVideo(); nextStep()" class="prev-btn">◀ kembali</button>
+        </div>
+      </section>
+      <!-- Aktivitas -->
+
+      <section id="soal" class="info-step">
+        <h2>hewan yang hidup di air?</h2>
+
+        <button onclick="jawaban('salah')">
+          <img src="https://w7.pngwing.com/pngs/265/874/png-transparent-cats-pets.png" 
+          alt="kucing">kucing</button>
+        <button onclick="jawaban('salah')">
+          <img src="https://pngimg.com/uploads/duck/duck_PNG5029.png" 
+          alt="bebek">bebek</button>
+        <button onclick="jawaban('benar')">
+          <img src="https://static.vecteezy.com/system/resources/thumbnails/042/236/023/small_2x/ai-generated-tropical-fish-isolated-on-transparent-background-png.png"
+            alt="ikan">ikan</button>
+
+        <p id="feedback-makanan" class="feedback"></p>
+
+        <div class="nav-btn">
+          <button onclick="goToStepById('materi')"> ◀ kembali</button>
+          <button class="next-btn">▶ Lanjut</button>
+        </div>
+      </section>
+
+      <!-- STEP 7: Soal 2 -->
+      <section class="info-step">
+        <h2>Hewan apa yang bernapas dengan insang</h2>
+        
+
+        <button onclick="jawaban('benar', 'feedback-tempat')">
+          <img src="https://static.vecteezy.com/system/resources/thumbnails/042/236/023/small_2x/ai-generated-tropical-fish-isolated-on-transparent-background-png.png" alt="ikan">ikan</button>
+        <button onclick="jawaban('salah', 'feedback-tempat')">
+          <img src="https://www.purwakartaupdate.com/wp-content/uploads/2021/09/burung-pipit.jpg"
+            alt="burung">burung</button>
+        <button onclick="jawaban('salah', 'feedback-tempat')">
+          <img
+            src="https://png.pngtree.com/png-clipart/20220124/ourmid/pngtree-native-chicken-commercially-available-element-material-png-image_4255613.png"
+            alt="ayam">ayam</button>
+
+        <p id="feedback-tempat" class="feedback"></p>
+
+        <div class="nav-btn">
+          <button class="prev-btn">◀ kembali</button>
+          <button class="next-btn">▶ lanjut</button>
+        </div>
+      </section>
+      <section class="info-step">
+        <div class="ciri-ciri">
+          <img src="" alt="paruh bebek">
+        </div>
+        <h2>bagian tubuh ini milik hewan siapa?</h2>
+
+        <button onclick="jawaban('salah', 'feedback-tempat')">
+          <img
+            src="https://png.pngtree.com/png-clipart/20220124/ourmid/pngtree-native-chicken-commercially-available-element-material-png-image_4255613.png"
+            alt="">ayam</button>
+        <button onclick="jawaban('salah', 'feedback-tempat')">
+          <img src="https://pngimg.com/uploads/duck/duck_PNG5029.png" alt="">bebek</button>
+        <button onclick="jawaban('benar', 'feedback-tempat')">
+          <img
+            src="https://static.vecteezy.com/system/resources/thumbnails/042/236/023/small_2x/ai-generated-tropical-fish-isolated-on-transparent-background-png.png"
+            alt="">ikan</button>
+
+        <p id="feedback-tempat" class="feedback"></p>
+
+        <div class="nav-btn">
+          <button class="prev-btn">◀ kembali</button>
+          <button class="next-btn">▶ lanjut</button>
+        </div>
+      </section>
+      <section class="info-step">
+        <div class="ciri-ciri">
+          <img
+            src=""
+            alt="ikan telur">
+        </div>
+        <h2>telur ini milik siapa?</h2>
+
+        <button onclick="jawaban('salah', 'feedback-tempat')">
+          <img
+            src="https://png.pngtree.com/png-clipart/20220124/ourmid/pngtree-native-chicken-commercially-available-element-material-png-image_4255613.png"
+            alt="ayam">ayam</button>
+        <button onclick="jawaban('benar', 'feedback-tempat')">
+          <img src="https://static.vecteezy.com/system/resources/thumbnails/042/236/023/small_2x/ai-generated-tropical-fish-isolated-on-transparent-background-png.png"
+            alt="ikan">ikan</button>
+        <button onclick="jawaban('salah', 'feedback-tempat')">
+          <img src="https://pngimg.com/uploads/duck/duck_PNG5029.png" alt="bebek">bebek</button>
+
+        <p id="feedback-tempat" class="feedback"></p>
+
+        <div class="nav-btn">
+          <button class="prev-btn">◀ kembali</button>
+          <button class="next-btn">▶ lanjut</button>
+        </div>
+      </section>
+      <!-- STEP 8: Soal 3 -->
+      <section class="info-step">
+        <h2>makanan ikan?</h2>
+
+        <button onclick="jawaban('salah', 'feedback-surai')">
+          <img src="https://s0.bukalapak.com/attachment/068632/jenis_batu_alam_image_1.jpg" alt="batu">batu</button>
+        <button onclick="jawaban('salah', 'feedback-surai')">
+          <img src="https://www.purwakartaupdate.com/wp-content/uploads/2021/09/burung-pipit.jpg"
+            alt="burung_pipit">burung</button>
+        <button onclick="jawaban('benar', 'feedback-surai')">
+          <img
+            src=""
+            alt="padi"></button>
+
+        <p id="feedback-surai" class="feedback"></p>
+        <div class="nav-btn">
+          <button class="prev-btn">◀ kembali</button>
+        </div>
+      </section>
+
+      <!-- Audio -->
+      <audio id="suara-benar" src="Hebat! Kamu Benar.mp3"></audio>
+      <audio id="suara-salah" src="salah yuk coba lagi.mp3"></audio>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 KINTAR - Kartu Interaktif Pintar. Dibuat oleh Taufik Hidayat - Mahasiswa UNTIRTA</p>
+      <div class="sosmed">
+        <a href="https://facebook.com/taufik.hidayat.416718" target="_blank"><img
+            src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+        <a href="https://instagram.com/taufik._.hdyt" target="_blank"><img
+            src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+        <a href="https://wa.me/082258038059" target="_blank"><img
+            src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+        <a href="mailto:taufikkipo3@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+            alt="Gmail"></a>
+      </div>
+    </footer>
+    <script>
+
+      /* ================= NAVIGATION ================= */
+      const navOnBtn = document.getElementById("nav-on");
+      const navCloseBtn = document.getElementById("nav-close");
+      const navMenu = document.getElementById("nav-menu");
+
+      if (navOnBtn && navCloseBtn && navMenu) {
+        navOnBtn.addEventListener("click", () => {
+          navMenu.classList.remove("close");
+          navMenu.classList.add("open");
+        });
+
+        navCloseBtn.addEventListener("click", () => {
+          navMenu.classList.remove("open");
+          navMenu.classList.add("close");
+        });
+      }
+
+      /* ================= SLIDE SYSTEM ================= */
+      let currentStep = 0;
+      const steps = document.querySelectorAll(".info-step");
+
+      function showStep(index) {
+        stopAllMedia();
+        steps.forEach(step => step.classList.remove("active"));
+        steps[index].classList.add("active");
+      }
+
+      document.addEventListener("click", function (e) {
+
+        if (e.target.classList.contains("next-btn")) {
+          if (currentStep < steps.length - 1) {
+            currentStep++;
+            showStep(currentStep);
+          }
+        }
+
+        if (e.target.classList.contains("prev-btn")) {
+          if (currentStep > 0) {
+            currentStep--;
+            showStep(currentStep);
+          }
+        }
+      });
+
+      /* ================= STOP ALL MEDIA ================= */
+      function stopAllMedia() {
+
+        // Stop audio & video biasa
+        document.querySelectorAll("audio, video").forEach(media => {
+          media.pause();
+          media.currentTime = 0;
+        });
+
+        // Reset semua iframe (YouTube otomatis berhenti)
+        document.querySelectorAll("iframe").forEach(frame => {
+          const src = frame.src;
+          frame.src = src;
+        });
+      }
+
+      /* ================= AUDIO PLAY ================= */
+      function playAudio(id) {
+        stopAllMedia();
+        const audio = document.getElementById(id);
+        if (audio) audio.play();
+      }
+
+      /* ================= GO TO STEP ================= */
+      function goToStepById(id) {
+        stopAllMedia();
+
+        steps.forEach((step, index) => {
+          step.classList.remove("active");
+
+          if (step.id === id) {
+            step.classList.add("active");
+            currentStep = index;
+          }
+        });
+      }
+
+      /* ================= SOAL SYSTEM ================= */
+      let isLocked = false;
+
+      function jawaban(status) {
+        if (isLocked) return;
+        isLocked = true;
+
+        const step = document.querySelector(".info-step.active");
+        const feedback = step.querySelector(".feedback");
+        const suaraBenar = document.getElementById("suara-benar");
+        const suaraSalah = document.getElementById("suara-salah");
+
+        const buttons = step.querySelectorAll("button");
+        buttons.forEach(btn => btn.disabled = true);
+
+        if (status === "benar") {
+          feedback.innerHTML = "✅ Hebat! Kamu benar!";
+          feedback.style.color = "green";
+          suaraBenar.play();
+          suaraBenar.onended = unlock;
+        } else {
+          feedback.innerHTML = "❌ Yuk coba lagi!";
+          feedback.style.color = "red";
+          suaraSalah.play();
+          suaraSalah.onended = unlock;
+        }
+
+        function unlock() {
+          buttons.forEach(btn => btn.disabled = false);
+          isLocked = false;
+        }
+      }
+
+    </script>
+</body>
+
+</html>
