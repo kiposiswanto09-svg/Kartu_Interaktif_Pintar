@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kintar - Kucing </title>
+    <link rel="stylesheet" href="bebek.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <div class="utama">
+        <!-- Navigasi -->
+        <header class="nav-container">
+            <div class="nav-logo">
+                <i id="nav-on" class="fa fa-bars" aria-label="Buka Menu"></i>
+            </div>
+        </header>
+
+        <nav id="nav-menu" class="close" aria-label="Menu Navigasi">
+            <div class="nav-menu-action">
+                <h4>Kintar</h4>
+                <i id="nav-close" class="fa fa-xmark" aria-label="Tutup Menu"></i>
+            </div>
+            <ul class="nav-list-container">
+                <li class="nav-list"><i class="fa fa-house"></i><a href="index.html">Home</a></li>
+                <li class="nav-list"><i class="fa-regular fa-circle-dot"></i><a href="Tentang.html">Tentang Saya</a>
+                </li>
+                <li class="nav-list"><i class="fa fa-code-branch"></i><a href="Hubungi.html">Hubungi Saya</a></li>
+            </ul>
+        </nav>
+
+        <!-- Konten -->
+        <main class="content">
+
+            <!-- Judul + Gambar + Suara -->
+            <section class="info-step active">
+                <h1 onclick="playAudio('audioJudul')" class="klik-audio">kucing 🐱</h1>
+                <audio id="audioJudul" src="kucing.mp3"></audio>
+                <img src="https://w7.pngwing.com/pngs/265/874/png-transparent-cats-pets.png" alt="Seekor Bebek"
+                    width="50%" onclick="playAudio('audioFoto')" class="klik-audio">
+                <audio id="audioFoto" src="ini kucing.mp3"></audio>
+                <p class="source">
+                    sumber gambar:
+                    <a href="https://pin.it/366sBpAO4" target="_blank">pngimg.com</a>
+                </p>
+
+                <h3 onclick="playAudio('suarakucing')" class="klik-audio">suara kucing 🐱</h3>
+                <audio id="suarakucing" src="suara kucing.mp3"></audio>
+                <audio controls>
+                    <source src="Audio kucing.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung audio.
+                </audio>
+
+                <p class="source">
+                    sumber audio:
+                    <a href="https://youtube.com/shorts/E54FsZDm1y4?si=wovgUjE4icOpMvSw" target="_blank">youtube</a>
+                </p>
+                <button class="next-btn">▶ lanjut</button>
+            </section>
+            <!-- ================= HALAMAN MENU ================= -->
+            <section id="materi" class="info-step menu-page">
+                <h2>materi kucing</h2>
+
+                <button onclick="goToStepById('tubuh')">bagian tubuh kucing</button>
+                <button onclick="goToStepById('bergerak')">cara bergerak kucing</button>
+                <button onclick="goToStepById('pertumbuhan')">pertumbuhan kucing</button>
+                <button onclick="goToStepById('perkembang')">perkembangan kucing</button>
+                <button onclick="goToStepById('makanan')">makanan kucing</button>
+                <button onclick="goToStepById('soal')">pertanyaan kucing</button>
+                <button class="prev-btn">◀ kembali</button>
+            </section>
+            <!-- Bagian tubuh hewan -->
+            <section id="tubuh" class="info-step">
+                <h3>bagian tubuh kucing</h3>
+
+                <div class="ciri-ciri">
+                    <img src="https://www.kucingkita.com/sites/default/files/styles/facebook/public/images/2023-09/gigi-kucing.jpg?h=528923e5&itok=McfgMybw"
+                        alt="gigi kucing" onclick="playAudio('audioGigijpg')" class="klik-audio">
+                    <audio id="audioGigijpg" src="ini gigi kucing.mp3"></audio>
+                    <span onclick="playAudio('audioGigi')" class="klik-audio">
+                        gigi kucing digunakan untuk makan</span>
+                </div>
+                <audio id="audioGigi" src="gigi kucing digunaka.mp3"></audio>
+
+                <div class="ciri-ciri">
+                    <img src="https://cdn.pixabay.com/photo/2019/07/25/06/19/cat-4361747_1280.jpg" alt="mata kucing"
+                        onclick="playAudio('audioMatajpg')" class="klik-audio">
+                    <audio id="audioMatajpg" src="ini mata kucing.mp3"></audio>
+                    <span onclick="playAudio('audioMata')" class="klik-audio">
+                        mata kucing digunakan untuk melihat</span>
+                    <audio id="audioMata" src="mata kucing digunaka.mp3"></audio>
+                </div>
+
+                <div class="ciri-ciri">
+                    <img src="https://3.bp.blogspot.com/-2A9CoaWus1I/WTIireSdknI/AAAAAAAAASA/ajbm61vLGXYNaLQDE2YXxLPfOFGEs1yzACLcB/s1600/pawCapture.jpg"
+                        alt="kaki kucing" onclick="playAudio('audioKakijpg')" class="klik-audio">
+                    <audio id="audioKakijpg" src="ini kaki kucing.mp3"></audio>
+                    <span onclick="playAudio('audioKaki')" class="klik-audio">
+                        kaki kucing digunakan untuk berjalan kucing</span>
+                    <audio id="audioKaki" src="kaki kucing digunaka.mp3"></audio>
+                </div>
+
+                <div class="ciri-ciri">
+                    <img src="https://www.harapanrakyat.com/wp-content/uploads/2022/09/Fungsi-Ekor-pada-Hewan-Ternyata-Beragam-Ini-Dia-Daftarnya.jpg"
+                        alt="ekor kucing" onclick="playAudio('audioEkorjpg')" class="klik-audio">
+                    <audio id="audioEkorjpg" src="ini ekor kucing.mp3"></audio>
+                    <span onclick="playAudio('audioEkor')" class="klik-audio">
+                        ekor kucing membantu menjaga keseimbangan</span>
+                    <audio id="audioEkorjpg" src="ekor kucing membantu.mp3"></audio>
+                </div>
+
+                <div class="ciri-ciri">
+                    <img src="https://static.wixstatic.com/media/80face_b7bad20277144e8293961dbf5c27b279~mv2.jpg/v1/fill/w_734,h_490,al_c,lg_1,q_80/80face_b7bad20277144e8293961dbf5c27b279~mv2.jpg"
+                        alt="lidah kucing" onclick="playAudio('audioKumisjpg')" class="klik-audio">
+                    <audio id="audioKumisjpg" src="ini kumis kucing.mp3"></audio>
+                    <span onclick="playAudio('audioKumis')" class="klik-audio">
+                        kumis kucing membantu meraba benda</span>
+                    <audio id="audioKumis" src="kumis kucing membant.mp3"></audio>
+                </div>
+                <div class="ciri-ciri">
+                    <img src="https://blog.sukapets.com/wp-content/uploads/2021/09/cara-membersihkan-telinga-kucing.jpg"
+                        alt="telinga kucing" onclick="playAudio('audioTelingajpg')" class="klik-audio">
+                    <audio id="audioTelingajpg" src="ini telinga kucing.mp3"></audio>
+                    <span onclick="playAudio('audioTelinga')" class="klik-audio">
+                        telinga kucing digunakan untuk mendengar</span>
+                    <audio id="audioTelinga" src="telinga kucing digun.mp3"></audio>
+                </div>
+                <div class="nav-btn">
+                    <button class="prev-btn">◀ kembali</button>
+                    <button class="next-btn">▶ lanjut</button>
+                </div>
+            </section>
+            <!--menu bagian tubuh hewan-->
+            <section id="bagian" class="info-step menu-page">
+                <button onclick="goToStepById('3D')">3D kucing bagian tubuh</button>
+                <button onclick="goToStepById('videobagian')">video bagian tubuh kucing animasi</button>
+                <button class="prev-btn">◀ kembali</button>
+            </section>
+            <!--3D hewan-->
+            <section id="3D" class="info-step">
+                <h3>3D kucing bagian tubuh</h3>
+                <iframe src="https://sketchfab.com/models/93eefe10f4f648a099e0fff7954c56b5/embed" width="100%"
+                    height="400" allow="autoplay; fullscreen; xr-spatial-tracking">
+                </iframe>
+                <div class="nav-btn">
+                    <button class="prev-btn">◀ kembali</button>
+                </div>
+            </section>
+            <!-- video bagian tubuh hewan -->
+            <section id="videobagian" class="info-step">
+                <h3>video bagian tubuh kucing animasi</h3>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/OZ-MdUjeKUU"
+                    title="Video bagian tubuh kucing" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+
+                <p class="source">
+                    sumber video:
+                    <a href="https://youtu.be/1PdK4HrDL5I?feature=shared" target="_blank">YouTube</a>
+                </p>
+
+                <div class="nav-btn">
+                    <button onclick="goToStepById('bagian')"> ◀ kembali</button>
+                </div>
+            </section>
+            <!-- hewan bergerak -->
+            <section id="bergerak" class="info-step">
+                <h3>cara kucing bergerak</h3>
+
+                <div class="ciri-ciri">
+                    <img src="https://asset-a.grid.id/crop/0x0:0x0/750x504/photo/2021/04/17/cat-1404147_640jpg-20210417032709.jpg"
+                        alt="kucing berlari">
+                    <span onclick="playAudio('audioBerlari')" class="klik-audio">
+                        kucing berlari dengan kaki</span>
+                    <audio id="audioBerlari" src="kucing berlari denga.mp3"></audio>
+                </div>
+
+                <div class="ciri-ciri">
+                    <img src="https://rakyatbenteng.disway.id/upload/1d932a0fcafe99a0848e4a4bdc45c974.jpg"
+                        alt="kucing melompat">
+                    <span onclick="playAudio('audioMelompat')" class="klik-audio">
+                        kucing melompat dengan kaki</span>
+                    <audio id="audioMelompat" src="kucing melompat deng.mp3"></audio>
+                </div>
+
+                <div class="ciri-ciri">
+                    <img src="https://media.istockphoto.com/id/1180611455/id/foto/kucing-memanjat-pohon-kucing-berburu-di-pohon-potret-kucing-menggemaskan-tetap-di-cabang-pohon.jpg?s=170667a&w=0&k=20&c=kTax070950OpSovFlu8dDJ9UF1GEtLJheacNdimyndg="
+                        alt="kucing memanjat">
+                    <span onclick="playAudio('audioMemanjat')" class="klik-audio">
+                        kucing memanjat pohon</span>
+                    <audio id="audioMemanjat" src="kucing memanjat poho.mp3"></audio>
+                </div>
+                <div class="nav-btn">
+                    <button onclick="goToStepById('materi')">◀ kembali</button>
+                    <button class="next-btn">▶ lanjut</button>
+                </div>
+            </section>
+            <!--video asli hewan bergerak-->
+            <section id="videoBergerak" class="info-step">
+                <h3>kucing berlari</h3>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/X-EPCtggT5U" title="Kucing Berlari"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+
+                <p class="source">
+                    sumber video:
+                    <a href="https://vt.tiktok.com/ZSmsYjJtS/" target="_blank">tiktok</a>
+                </p>
+                <div class="nav-btn">
+                    <button class="prev-btn">◀ kembali</button>
+
+                </div>
+            </section>
+
+
+            <!-- pertumbuhan hewan -->
+            <section id="pertumbuhan" class="info-step">
+                <h3>pertumbuhan kucing</h3>
+
+                <div class="ciri-ciri">
+                    <img src="https://2.bp.blogspot.com/-6zrM4tHh6RI/W7FbIDpwq2I/AAAAAAAAI3A/9vmRuW93At4tlrN9ClJkrKaiWi19utwTgCLcBGAs/s1600/gambar%2Bkucing%2Bcomel.jpg"
+                        alt="kucing melahirkan" onclick="playAudio('audioAnakjpg')" class="klik-audio">
+                    <audio id="audioAnakjpg" src="ini anak kucing.mp3"></audio>
+                    <span onclick="playAudio('audioAnak')" class="klik-audio">
+                        anak kucing minum susu dari induk</span>
+                    <audio id="audioAnak" src="anak kucing minum su.mp3"></audio>
+                </div>
+
+                <div class="ciri-ciri">
+                    <img src="https://png.pngtree.com/thumb_back/fw800/background/20220601/pngtree-pair-of-juvenile-cats-one-red-and-one-striped-facing-each-other-in-a-standoff-photo-image_30773588.jpg"
+                        alt="anak kucing" onclick="playAudio('audioRemajajpg')" class="klik-audio">
+                    <audio id="audioRemajajpg" src="ini kucing remaja.mp3"></audio>
+                    <span onclick="playAudio('audioRemaja')" class="klik-audio">
+                        kucing remaja mencari makan sendiri</span>
+                    <audio id="audioRemaja" src="kucing remaja mencar.mp3"></audio>
+                </div>
+
+                <div class="ciri-ciri">
+                    <img src="https://c8.alamy.com/comp/PFGC49/tabby-cat-giving-birth-to-kittens-PFGC49.jpg"
+                        alt="kucing dewasa" onclick="playAudio('audioDewasajpg')" class="klik-audio">
+                    <audio id="audioDewasajpg" src="ini Kucing dewasa.mp3"></audio>
+                    <span onclick="playAudio('audioDewasa')" class="klik-audio">
+                        kucing dewasa melahirkan anak</span>
+                    <audio id="audioDewasa" src="Kucing dewasa melahi.mp3"></audio>
+                </div>
+
+
+                <div class="nav-btn">
+                    <button onclick="goToStepById('materi')">◀ kembali</button>
+                    <button class="next-btn">▶ lanjut</button>
+                </div>
+            </section>
+            <!--video ai pertumbuhan bebek-->
+            <section class="info-step">
+                <h3>video pertumbuhan kucing</h3>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/DyLSvv9XQlg"
+                    title="Video Pertumbuhan Kucing" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+                <p class="source">
+                    sumber video:
+                    <a href="https://vt.tiktok.com/ZSmsYjJtS/" target="_blank">tiktok</a>
+                </p>
+                <div class="nav-btn">
+                    <button class="prev-btn">◀ kembali</button>
+
+                </div>
+            </section>
+            <!-- makanan hewan -->
+            <section id="makanan" class="info-step">
+                <h3>makanan kucing</h3>
+                <div class="ciri-ciri">
+                    <img src="https://toppng.com/uploads/preview/ikan-png-11553957549wbmttofwvj.png"
+                        alt="ikan" onclick="playAudio('audioIkanjpg')" class="klik-audio">
+                    <audio id="audioIkanjpg" src="ini ikan.mp3"></audio>
+                    <span onclick="playAudio('audioIkan')" class="klik-audio">
+                        kucing makan ikan</span>
+                    <audio id="audioIkan" src="kucing makan ikan.mp3"></audio>
+                </div>
+
+                <div class="ciri-ciri">
+                    <img src="https://cdn1-production-images-kly.akamaized.net/OlDyWl2TugXoEh5W9KMN4UT-Uek=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3133148/original/027517900_1589942784-Raw_Fresh_Meat_With_Rosemary.jpg"
+                        alt="daging" onclick="playAudio('audioDagingjpg')" class="klik-audio">
+                    <audio id="audioDagingjpg" src="ini daging.mp3"></audio>
+                    <span onclick="playAudio('audioDaging')" class="klik-audio">
+                        kucing makan daging</span>
+                    <audio id="audioDaging" src="kucing makan daging.mp3"></audio>
+                </div>
+
+                <div class="ciri-ciri">
+                    <img src="https://cdn1-production-images-kly.akamaized.net/qzUdF2vXk1cg4DLkhX6vTTM83XM=/640x360/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2897091/original/021706100_1567146676-cat-2170494_1920.jpg"
+                        alt="makanan kucing" onclick="playAudio('audioMakanankucingjpg')" class="klik-audio">
+                    <audio id="audioMakanankucingjpg" src="ini makanan kucing.mp3"></audio>
+                    <span onclick="playAudio('audioMakanankucing')" class="klik-audio">
+                        kucing makan makanan kucing</span>
+                    <audio id="audioMakanankucing" src="kucing makan makanan.mp3"></audio>
+                </div>
+                <div class="nav-btn">
+                    <button onclick="goToStepById('materi')">◀ Kembali</button>
+                </div>
+            </section>
+                <!--perkembang biak hewan-->
+                <section id="perkembang" class="info-step">
+                    <h3>perkembang biak kucing</h3>
+
+                    <div class="ciri-ciri">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgODNU1FywGGGCczNhMt0Ti3xJI1puzc8qtfSMCb03uUajQfRve0owQkx7tcKZR5BUNdcQiyItkRjQCdVDTJpOxPJR05YedfaOEcgUE-3LTWFERCjwFBXCxV92FtWPZ8cJZoLR6X1Ty3Qr3A62Xr1KhcuHGBLkHEZz8yQpuHfdl-gxhURXoJZz_8fDdLHk/s870/10%20Ciri-Ciri%20Kucing%20Hamil.jpg"
+                            alt="kucing hamil" onclick="playAudio('audioKucingPerutjpg')" class="klik-audio">
+                            <audio id="audioKucingPerutjpg" src="ini induk kucing per.mp3"></audio>
+                        <span onclick="playAudio('audioKucingPerut')" class="klik-audio">
+                            kucing hamil. perutnya besar. biasanya lebih tenang.</span>
+                            <audio id="audioKucingPerut" src="kucing hamil perutny.mp3"></audio>
+                    </div>
+
+                    <div class="ciri-ciri">
+                        <img src="https://c8.alamy.com/comp/PFGC49/tabby-cat-giving-birth-to-kittens-PFGC49.jpg"
+                            alt="kucing melahirkan" onclick="playAudio('audioKucingMelahirkanjpg')" class="klik-audio">
+                        <audio id="audioKucingMelahirkanjpg" src="ini induk kucing mel.mp3"></audio>
+                        <span onclick="playAudio('audioKucingMelahirkan')" class="klik-audio">
+                            kucing melahirkan anak kucing, kucing mencari tempat aman.</span>
+                            <audio id="audioKucingMelahirkan" src="kucing melahirkan an.mp3"></audio>
+                    </div>
+
+                    <div class="ciri-ciri">
+                        <img src="https://fanicat.com/wp-content/uploads/2020/01/berapa-lama-kucing-menyusui.jpg"
+                            alt="kucing menyusui" onclick="playAudio('audioKucingMenyusuijpg')" class="klik-audio">
+                            <audio id="audioKucingMenyusuijpg" src="ini induk kucing men.mp3"></audio>
+                        <span onclick="playAudio('audioKucingMenyusui')" class="klik-audio">
+                            kucing menyusui anaknya, anak kucing minum susu dari induknya.</span>
+                            <audio id="audioKucingMenyusuijpg" src="kucing menyusui anak.mp3"></audio>
+                    </div>
+                    <div class="ciri-ciri">
+                        <img src="https://i.ytimg.com/vi/3gdZxcgyxEU/maxresdefault.jpg" 
+                        alt="anak kucing" onclick="playAudio('audioAnakKucingjpg')" class="klik-audio">
+                        <audio id="audioAnakKucingjpg" src="ini anak kucing baru.mp3"></audio>
+                        <span onclick="playAudio('audioAnakKucing')" class="klik-audio">
+                            anak kucing mulai bermain dan berjalan sendiri</span>
+                            <audio id="audioAnakKucing" src="anak kucing mulai be.mp3"></audio>
+                    </div>
+
+                    <div class="nav-btn">
+                        <button onclick="goToStepById('materi')">◀ Kembali</button>
+                        <button class="next-btn">▶ Lanjut</button>
+                    </div>
+                </section>
+                <!--video ai perkembang biak hewan-->
+                <section class="info-step">
+                    <h3>video kucing melahirkan</h3>
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/FnD1mapy6OE"
+                        title="Video Perkembangbiakan Kucing" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <p class="source">
+                        sumber video:
+                        <a href="https://vt.tiktok.com/ZSms6vCMu/" target="_blank">tiktok</a>
+                    </p>
+                    <div class="nav-btn">
+                        <button class="prev-btn">◀ Kembali</button>
+                    </div>
+                </section>
+                <!-- Aktivitas -->
+
+                <section id="soal" class="info-step">
+                    <img src="https://www.kucingkita.com/sites/default/files/styles/facebook/public/images/2023-09/gigi-kucing.jpg?h=528923e5&itok=McfgMybw"
+                        width="50%" alt="gigi-kucing">
+                    <h2>gigi gambar atas ini punya siapa?</h2>
+
+                    <button onclick="jawaban('benar')">
+                        <img src="https://w7.pngwing.com/pngs/265/874/png-transparent-cats-pets.png"
+                            alt="kucing">
+                            kucing</button>
+                    <button onclick="jawaban('salah')">
+                        <img src="https://pngimg.com/uploads/duck/duck_PNG5029.png" 
+                        alt="bebek">
+                        bebek</button>
+                    <button onclick="jawaban('salah')">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/042/236/023/small_2x/ai-generated-tropical-fish-isolated-on-transparent-background-png.png"
+                            alt="ikan">
+                            ikan</button>
+
+                    <p id="feedback-makanan" class="feedback"></p>
+
+                    <div class="nav-btn">
+                        <button onclick="goToStepById('materi')">◀ Kembali</button>
+                        <button class="next-btn">▶ Lanjut</button>
+                    </div>
+                </section>
+
+                <!-- STEP 7: Soal 2 -->
+                <section class="info-step">
+                    <h2>suara hewan ini milik siapa?</h2>
+                    <audio controls>
+                        <source src="Audio kucing.mp3" type="audio/mpeg">
+                        Browser Anda tidak mendukung audio.
+                    </audio>
+
+                    <button onclick="jawaban('salah', 'feedback-tempat')">
+                        <img src="https://pngimg.com/uploads/duck/duck_PNG5029.png" 
+                        alt="bebek">
+                        bebek</button>
+                    <button onclick="jawaban('benar', 'feedback-tempat')">
+                        <img src="https://w7.pngwing.com/pngs/265/874/png-transparent-cats-pets.png"
+                            alt="kucing">
+                            kucing</button>
+                    <button onclick="jawaban('salah', 'feedback-tempat')">
+                        <img src="https://png.pngtree.com/png-clipart/20220124/ourmid/pngtree-native-chicken-commercially-available-element-material-png-image_4255613.png"
+                            alt="ayam">
+                            ayam</button>
+
+                    <p id="feedback-tempat" class="feedback"></p>
+
+                    <div class="nav-btn">
+                        <button class="prev-btn">◀ kembali</button>
+                        <button class="next-btn">▶ lanjut</button>
+                    </div>
+                </section>
+                <section class="info-step">
+                    <h2>kucing bisa apa?</h2>
+
+                    <button onclick="jawaban('salah', 'feedback-tempat')">
+                        <img src="https://media.istockphoto.com/id/1294831125/id/foto/burung-terbang-yang-indah-macaw-biru-dan-emas-terbang-dengan-latar-belakang-hijau.jpg?s=170667a&w=0&k=20&c=0sKP03_z-sdPAUrZ7yU063UVKTSSh5en7b6r3AEqurM="
+                            alt="burung terbang">
+                            terbang</button>
+                    <button onclick="jawaban('salah', 'feedback-tempat')">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl5PCjW065CZnxU4-N9znp02q_6z8HPjdnxETOpfj-fw&s=10"
+                            alt="bebek bertelur">
+                            bertelur</button>
+                    <button onclick="jawaban('benar', 'feedback-tempat')">
+                        <img src="https://asset-a.grid.id/crop/0x0:0x0/750x504/photo/2021/04/17/cat-1404147_640jpg-20210417032709.jpg"
+                            alt="berlari">
+                            berlari</button>
+
+                    <p id="feedback-tempat" class="feedback"></p>
+
+                    <div class="nav-btn">
+                        <button class="prev-btn">◀ kembali</button>
+                        <button class="next-btn">▶ lanjut</button>
+                    </div>
+                </section>
+                <section class="info-step">
+                    <h2>kucing dewasa bisa apa?</h2>
+
+                    <button onclick="jawaban('benar', 'feedback-tempat')">
+                        <img src="https://c8.alamy.com/comp/PFGC49/tabby-cat-giving-birth-to-kittens-PFGC49.jpg"
+                            alt="melahirkan">
+                            melahirkan</button>
+                    <button onclick="jawaban('salah', 'feedback-tempat')">
+                        <img src="https://res.cloudinary.com/dk0z4ums3/image/upload/v1594114160/attached_image/ketahui-kelebihan-dan-kekurangan-telur-bebek.jpg"
+                            alt="burtelur">
+                            bertelur</button>
+                    <button onclick="jawaban('salah', 'feedback-tempat')">
+                        <img src="https://cdn.pixabay.com/photo/2019/03/19/02/41/bird-4064593_960_720.jpg"
+                            alt="terbang">
+                            terbang</button>
+
+                    <p id="feedback-tempat" class="feedback"></p>
+
+                    <div class="nav-btn">
+                        <button class="prev-btn">◀ kembali</button>
+                        <button class="next-btn">▶ lanjut</button>
+                    </div>
+                </section>
+                <!-- STEP 8: Soal 3 -->
+                <section class="info-step">
+                    <h2>makanan kucing?</h2>
+
+                    <button onclick="jawaban('salah', 'feedback-surai')">
+                        <img src="https://png.pngtree.com/png-vector/20241217/ourmid/pngtree-rice-plant-against-white-png-image_14794260.png" 
+                        alt="padi">
+                        padi</button>
+                    <button onclick="jawaban('salah', 'feedback-surai')">
+                        <img src="https://webstockreview.net/images/grapes-clipart-buah-buahan-16.png" 
+                        alt="buah">
+                        buah</button>
+                    <button onclick="jawaban('benar', 'feedback-surai')">
+                        <img src="https://png.pngtree.com/png-vector/20240707/ourlarge/pngtree-pieces-of-raw-beef-meat-png-image_13015733.png" 
+                        alt="padi">
+                        daging</button>
+
+                    <p id="feedback-surai" class="feedback"></p>
+                    <div class="nav-btn">
+                        <button class="prev-btn">◀ kembali</button>
+                    </div>
+                </section>
+
+                <!-- Audio -->
+                <audio id="suara-benar" src="Hebat! Kamu Benar.mp3"></audio>
+                <audio id="suara-salah" src="salah yuk coba lagi.mp3"></audio>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2025 KINTAR - Kartu Interaktif Pintar. Dibuat oleh Taufik Hidayat - Mahasiswa UNTIRTA</p>
+            <div class="sosmed">
+                <a href="https://facebook.com/taufik.hidayat.416718" target="_blank"><img
+                        src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+                <a href="https://instagram.com/kiposis_official" target="_blank"><img
+                        src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+                <a href="https://wa.me/082258038059" target="_blank"><img
+                        src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+                <a href="mailto:taufikkipo3@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+                        alt="Gmail"></a>
+            </div>
+        </footer>
+        <script>
+            /* ================= NAVIGATION ================= */
+            const navOnBtn = document.getElementById("nav-on");
+            const navCloseBtn = document.getElementById("nav-close");
+            const navMenu = document.getElementById("nav-menu");
+
+            if (navOnBtn && navCloseBtn && navMenu) {
+                navOnBtn.addEventListener("click", () => {
+                    navMenu.classList.remove("close");
+                    navMenu.classList.add("open");
+                });
+
+                navCloseBtn.addEventListener("click", () => {
+                    navMenu.classList.remove("open");
+                    navMenu.classList.add("close");
+                });
+            }
+
+            /* ================= SLIDE SYSTEM ================= */
+            let currentStep = 0;
+            const steps = document.querySelectorAll(".info-step");
+
+            function showStep(index) {
+                stopAllMedia();
+                steps.forEach(step => step.classList.remove("active"));
+                steps[index].classList.add("active");
+            }
+
+            document.addEventListener("click", function (e) {
+
+                if (e.target.classList.contains("next-btn")) {
+                    if (currentStep < steps.length - 1) {
+                        currentStep++;
+                        showStep(currentStep);
+                    }
+                }
+
+                if (e.target.classList.contains("prev-btn")) {
+                    if (currentStep > 0) {
+                        currentStep--;
+                        showStep(currentStep);
+                    }
+                }
+            });
+
+            /* ================= STOP ALL MEDIA ================= */
+            function stopAllMedia() {
+
+                // Stop audio & video biasa
+                document.querySelectorAll("audio, video").forEach(media => {
+                    media.pause();
+                    media.currentTime = 0;
+                });
+
+                // Reset semua iframe (YouTube otomatis berhenti)
+                document.querySelectorAll("iframe").forEach(frame => {
+                    const src = frame.src;
+                    frame.src = src;
+                });
+            }
+
+            /* ================= AUDIO PLAY ================= */
+            function playAudio(id) {
+                stopAllMedia();
+                const audio = document.getElementById(id);
+                if (audio) audio.play();
+            }
+
+            /* ================= GO TO STEP ================= */
+            function goToStepById(id) {
+                stopAllMedia();
+
+                steps.forEach((step, index) => {
+                    step.classList.remove("active");
+
+                    if (step.id === id) {
+                        step.classList.add("active");
+                        currentStep = index;
+                    }
+                });
+            }
+
+            /* ================= SOAL SYSTEM ================= */
+            let isLocked = false;
+
+            function jawaban(status) {
+                if (isLocked) return;
+                isLocked = true;
+
+                const step = document.querySelector(".info-step.active");
+                const feedback = step.querySelector(".feedback");
+                const suaraBenar = document.getElementById("suara-benar");
+                const suaraSalah = document.getElementById("suara-salah");
+
+                const buttons = step.querySelectorAll("button");
+                buttons.forEach(btn => btn.disabled = true);
+
+                if (status === "benar") {
+                    feedback.innerHTML = "✅ Hebat! Kamu benar!";
+                    feedback.style.color = "green";
+                    suaraBenar.play();
+                    suaraBenar.onended = unlock;
+                } else {
+                    feedback.innerHTML = "❌ Yuk coba lagi!";
+                    feedback.style.color = "red";
+                    suaraSalah.play();
+                    suaraSalah.onended = unlock;
+                }
+
+                function unlock() {
+                    buttons.forEach(btn => btn.disabled = false);
+                    isLocked = false;
+                }
+            }
+        </script>
+
+</body>
+
+</html>
