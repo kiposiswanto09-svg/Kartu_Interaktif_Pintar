@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kintar - Lumba 🐬</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* Reset dan Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      color: #2c3e50;
+    }
+
+    /* Dark overlay saat menu terbuka */
+    body.nav-open::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+      z-index: 999;
+    }
+
+    /* Header Navigation */
+    .nav-container {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1001;
+    }
+
+    .nav-logo i {
+      font-size: 2rem;
+      color: white;
+      background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .nav-logo i:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    }
+
+    /* Navigation Menu */
+    #nav-menu {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 80%;
+      max-width: 320px;
+      height: 100vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      backdrop-filter: blur(10px);
+      box-shadow: 4px 0 30px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: left 0.4s ease-in-out;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #nav-menu.open {
+      left: 0;
+    }
+
+    .nav-menu-action {
+      padding: 30px 20px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-menu-action h4 {
+      color: white;
+      font-size: 2rem;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    #nav-close {
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    #nav-close:hover {
+      background: rgba(255,255,255,0.2);
+      transform: rotate(90deg);
+    }
+
+    .nav-list-container {
+      list-style: none;
+      padding: 20px 0;
+    }
+
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 5px 15px;
+      border-radius: 15px;
+    }
+
+    .nav-list:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateX(10px);
+    }
+
+    .nav-list i {
+      color: #fff;
+      font-size: 1.5rem;
+      width: 30px;
+    }
+
+    .nav-list a {
+      text-decoration: none;
+      font-size: 1.3rem;
+      color: white;
+      font-weight: 600;
+    }
+
+    /* Main Content */
+    .utama {
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .content {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      width: 90%;
+      max-width: 900px;
+      margin: 80px auto 20px;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+
+    .Judul h1 {
+      text-align: center;
+      color: #ff6b6b;
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+
+    /* Image Section */
+    .foto {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .foto img {
+      width: 350px;
+      max-width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      animation: float 3s ease-in-out infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .foto img:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+
+    .source {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #7f8c8d;
+      text-align: center;
+      font-style: italic;
+    }
+
+    .source a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    /* Audio Player */
+    .audio-player {
+      background: linear-gradient(135deg, #74b9ff, #0984e3);
+      color: white;
+      padding: 25px;
+      border-radius: 20px;
+      text-align: center;
+      margin: 30px 0;
+      box-shadow: 0 10px 30px rgba(116, 185, 255, 0.3);
+    }
+
+    .audio-player h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .audio-player audio {
+      width: 100%;
+      max-width: 400px;
+      margin: 15px 0;
+      border-radius: 15px;
+    }
+
+    /* Info Boxes */
+    .info-box {
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      border-left: 8px solid #ff6b6b;
+      padding: 25px;
+      margin-bottom: 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .info-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .info-box h3 {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+      color: #2c3e50;
+    }
+
+    .info-box p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      color: #34495e;
+    }
+
+    /* Quiz Sections */
+    .aktivitas, .tempat {
+      background: linear-gradient(135deg, #a8edea, #fed6e3);
+      padding: 30px;
+      border-radius: 25px;
+      text-align: center;
+      margin: 30px 0;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    .aktivitas h2, .tempat h2 {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      color: #2c3e50;
+    }
+
+    .aktivitas button, .tempat button {
+      font-size: 1.3rem;
+      margin: 10px;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 15px;
+      background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .aktivitas button:hover, .tempat button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .aktivitas button:active, .tempat button:active {
+      transform: translateY(0);
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      padding: 15px;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .feedback.correct {
+      background: linear-gradient(135deg, #00b894, #00cec9);
+      color: white;
+    }
+
+    .feedback.incorrect {
+      background: linear-gradient(135deg, #e17055, #fdcb6e);
+      color: white;
+    }
+
+    /* New Game Sections */
+    .matching-game, .color-game, .counting-game {
+      background: linear-gradient(135deg, #fd79a8, #fdcb6e);
+      padding: 30px;
+      border-radius: 25px;
+      margin: 30px 0;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    .matching-game h2, .color-game h2, .counting-game h2 {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      color: #2c3e50;
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .game-card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      font-size: 2rem;
+    }
+
+    .game-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .game-card.selected {
+      background: linear-gradient(135deg, #74b9ff, #0984e3);
+      color: white;
+    }
+
+    .game-card.matched {
+      background: linear-gradient(135deg, #00b894, #00cec9);
+      color: white;
+    }
+
+    .color-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .color-btn {
+      width: 80px;
+      height: 80px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .color-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .dolphin-display {
+      font-size: 4rem;
+      margin: 20px 0;
+      animation: swim 3s ease-in-out infinite;
+    }
+
+    @keyframes swim {
+      0% { transform: translateX(-20px); }
+      50% { transform: translateX(20px); }
+      100% { transform: translateX(-20px); }
+    }
+
+    .counting-display {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+      font-size: 3rem;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 20px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #00b894, #00cec9);
+      width: 0%;
+      transition: width 0.5s ease;
+      border-radius: 10px;
+    }
+
+    .score-display {
+      background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+      color: white;
+      padding: 15px;
+      border-radius: 15px;
+      margin: 20px 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 30px;
+      text-align: center;
+      background: linear-gradient(135deg, #2d3436, #636e72);
+      color: white;
+      margin-top: 50px;
+    }
+
+    .footer .sosmed {
+      margin-top: 20px;
+    }
+
+    .footer .sosmed a img {
+      width: 35px;
+      margin: 0 15px;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+
+    .footer .sosmed a img:hover {
+      transform: scale(1.2);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .Judul h1 {
+        font-size: 2.2rem;
+      }
+
+      .foto img {
+        width: 280px;
+      }
+
+      .info-box p {
+        font-size: 1.1rem;
+      }
+
+      .aktivitas button, .tempat button {
+        font-size: 1.1rem;
+        padding: 12px 20px;
+        margin: 8px;
+      }
+
+      .game-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .color-btn {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    /* Accessibility */
+    button:focus {
+      outline: 3px solid #74b9ff;
+      outline-offset: 2px;
+    }
+
+    .high-contrast {
+      filter: contrast(150%);
+    }
+
+    /* Animation Classes */
+    .celebrate {
+      animation: celebrate 1s ease-in-out;
+    }
+
+    @keyframes celebrate {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2) rotate(10deg); }
+      100% { transform: scale(1); }
+    }
+
+    .shake {
+      animation: shake 0.5s ease-in-out;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="utama">
+    <!-- Navigasi -->
+    <header class="nav-container">
+      <div class="nav-logo">
+        <i id="nav-on" class="fa fa-bars" aria-label="Buka Menu"></i>
+      </div>
+    </header>
+
+    <nav id="nav-menu" class="close" aria-label="Menu Navigasi">
+      <div class="nav-menu-action">
+        <h4>🐬 Kintar</h4>
+        <i id="nav-close" class="fa fa-xmark" aria-label="Tutup Menu"></i>
+      </div>
+      <ul class="nav-list-container">
+        <li class="nav-list"><i class="fa fa-house"></i><a href="Kintar.html">Home</a></li>
+        <li class="nav-list"><i class="fa-regular fa-circle-dot"></i><a href="Tentang_Saya.html">Tentang Saya</a></li>
+        <li class="nav-list"><i class="fa fa-code-branch"></i><a href="Kintar_Hubungi_Saya.html">Hubungi Saya</a></li>
+      </ul>
+    </nav>
+
+    <!-- Konten -->
+    <main class="content">
+      <section class="Judul">
+        <h1>Aku Lumba 🐬</h1>
+      </section>
+
+      <div class="foto">
+        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Seekor Lumba-lumba berenang" />
+        <p class="source">
+          Sumber gambar: Unsplash
+        </p>
+      </div>
+
+      <div class="audio-player">
+        <h3>🎵 Suara Lumba-lumba</h3>
+        <p>Klik tombol untuk mendengar suara lumba-lumba!</p>
+        <button onclick="playDolphinSound()" style="background: rgba(255,255,255,0.3); color: white; border: none; padding: 15px 30px; border-radius: 15px; font-size: 1.2rem; cursor: pointer; margin: 10px;">
+          🔊 Dengar Suara
+        </button>
+      </div>
+    
+      <section class="info-box">
+        <h3>🎨 Ciri-ciriku?</h3>
+        <p>"Aku hewan laut yang cerdas dan ramah. Tubuhku licin, panjang, dan berwarna abu-abu. Aku punya sirip di punggungku dan senyum manis di wajahku! Aku juga suka melompat dan berenang cepat di atas air."</p>
+      </section>
+
+      <section class="info-box">
+        <h3>🍽️ Aku makan apa?</h3>
+        <p>"Aku suka makan ikan kecil dan cumi-cumi. Aku berburu bersama teman-temanku—kami bekerja sama seperti tim yang kompak!"</p>
+      </section>
+
+      <section class="info-box">
+        <h3>🌿 Aku tinggal di mana?</h3>
+        <p>"Aku tinggal di laut yang hangat, dekat pantai atau di samudera luas. Kadang-kadang, aku juga muncul di atas air untuk bernapas, loh!"</p>
+      </section>
+
+      <section class="info-box">
+        <h3>📚 Aku termasuk hewan apa?</h3>
+        <p>"Aku bukan ikan, walaupun hidup di laut. Aku adalah mamalia laut seperti paus. Aku bernapas dengan paru-paru, dan menyusui anakku. Aku juga bisa berkomunikasi dengan suara-suara khusus yang hanya dimengerti oleh sesama lumba-lumba."</p>
+      </section>
+
+      <!-- Progress Bar -->
+      <div class="score-display">
+        <div>🏆 Skor: <span id="total-score">0</span></div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <div>Level: <span id="current-level">1</span>/5</div>
+      </div>
+
+      <!-- Game 1: Mencocokkan Gambar -->
+      <section class="matching-game">
+        <h2>🎮 Game 1: Tebak Pasanganku!</h2>
+        <p>Cocokkan lumba-lumba dengan makanannya!</p>
+        <div class="game-grid" id="matching-grid">
+          <div class="game-card" data-pair="dolphin" onclick="selectCard(this)">🐬</div>
+          <div class="game-card" data-pair="fish" onclick="selectCard(this)">🐟</div>
+          <div class="game-card" data-pair="dolphin" onclick="selectCard(this)">🐬</div>
+          <div class="game-card" data-pair="fish" onclick="selectCard(this)">🐟</div>
+          <div class="game-card" data-pair="squid" onclick="selectCard(this)">🦑</div>
+          <div class="game-card" data-pair="squid" onclick="selectCard(this)">🦑</div>
+        </div>
+        <p id="matching-feedback" class="feedback"></p>
+      </section>
+
+      <!-- Game 2: Warna Lumba-lumba -->
+      <section class="color-game">
+        <h2>🌈 Game 2: Warna Lumba-lumba</h2>
+        <p>Pilih warna yang sama dengan lumba-lumba!</p>
+        <div class="dolphin-display" id="dolphin-color">🐬</div>
+        <div class="color-buttons">
+          <button class="color-btn" style="background: #74b9ff;" onclick="selectColor('#74b9ff')"></button>
+          <button class="color-btn" style="background: #fd79a8;" onclick="selectColor('#fd79a8')"></button>
+          <button class="color-btn" style="background: #fdcb6e;" onclick="selectColor('#fdcb6e')"></button>
+          <button class="color-btn" style="background: #00b894;" onclick="selectColor('#00b894')"></button>
+        </div>
+        <p id="color-feedback" class="feedback"></p>
+      </section>
+
+      <!-- Game 3: Menghitung Lumba-lumba -->
+      <section class="counting-game">
+        <h2>🔢 Game 3: Hitung Lumba-lumba</h2>
+        <p>Berapa banyak lumba-lumba yang kamu lihat?</p>
+        <div class="counting-display" id="dolphins-display"></div>
+        <div>
+          <button onclick="countAnswer(1)">1</button>
+          <button onclick="countAnswer(2)">2</button>
+          <button onclick="countAnswer(3)">3</button>
+          <button onclick="countAnswer(4)">4</button>
+        </div>
+        <p id="counting-feedback" class="feedback"></p>
+      </section>
+
+      <!-- Kuis Sederhana -->
+      <section class="aktivitas">
+        <h2>❓ Di mana lumba-lumba tinggal?</h2>
+        <button onclick="jawaban('salah', 'feedback-rumah', this)">A. di kebun 🌳</button>
+        <button onclick="jawaban('salah', 'feedback-rumah', this)">B. di Hutan 🌲</button>
+        <button onclick="jawaban('benar', 'feedback-rumah', this)">C. di laut 🌊</button>
+        <p id="feedback-rumah" class="feedback"></p>
+      </section>
+
+      <section class="tempat">
+        <h2>🍽️ Apa makanan lumba-lumba?</h2>
+        <button onclick="jawaban('salah', 'feedback-warna', this)">A. buah-buahan 🍎</button>
+        <button onclick="jawaban('salah', 'feedback-warna', this)">B. Sayuran 🥬</button>
+        <button onclick="jawaban('benar', 'feedback-warna', this)">C. Ikan kecil 🐟</button>
+        <p id="feedback-warna" class="feedback"></p>
+      </section>
+
+      <section class="aktivitas">
+        <h2>🧬 Lumba-lumba termasuk hewan apa?</h2>
+        <button onclick="jawaban('benar', 'feedback-makan', this)">A. Mamalia 🐋</button>
+        <button onclick="jawaban('salah', 'feedback-makan', this)">B. Ikan 🐠</button>
+        <button onclick="jawaban('salah', 'feedback-makan', this)">C. Burung 🐦</button>
+        <p id="feedback-makan" class="feedback"></p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 🐬 Kintar - Belajar Bersama Lumba-lumba. Dibuat oleh Taufik Hidayat - Mahasiswa UNTIRTA</p>
+      <div class="sosmed">
+        <a href="https://facebook.com/taufik.hidayat.416718" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+        <a href="https://instagram.com/kiposis_official" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+        <a href="https://wa.me/082258038059" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+        <a href="mailto:taufikkipo3@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail"></a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Variables for game state
+    let totalScore = 0;
+    let currentLevel = 1;
+    let selectedCards = [];
+    let matchedPairs = 0;
+    let currentDolphinColor = '#74b9ff';
+    let currentDolphinCount = 0;
+
+    // Navigation
+    const navOnBtn = document.getElementById("nav-on");
+    const navCloseBtn = document.getElementById("nav-close");
+    const navMenu = document.getElementById("nav-menu");
+
+    navOnBtn.addEventListener("click", () => {
+      navMenu.classList.remove("close");
+      navMenu.classList.add("open");
+      document.body.classList.add("nav-open");
+    });
+
+    navCloseBtn.addEventListener("click", () => {
+      navMenu.classList.remove("open");
+      navMenu.classList.add("close");
+      document.body.classList.remove("nav-open");
+    });
+
+    // Sound function
+    function playDolphinSound() {
+      // Create audio context for sound synthesis
+      if (typeof(Audio) !== "undefined") {
+        // Simple beep sound as placeholder
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.frequency.value = 800;
+        oscillator.type = 'sine';
+        
+        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1);
+        
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + 1);
+      }
+    }
+
+    // Quiz functions
+    function jawaban(status, idTarget, buttonElement) {
+      const feedback = document.getElementById(idTarget);
+      const isCorrect = status === 'benar';
+      
+      // Disable all buttons in the same section
+      const section = buttonElement.closest('section');
+      const buttons = section.querySelectorAll('button');
+      buttons.forEach(btn => btn.disabled = true);
+      
+      if (isCorrect) {
+        feedback.textContent = "🎉 Hebat! Kamu Benar!";
+        feedback.className = "feedback correct";
+        buttonElement.classList.add('celebrate');
+        updateScore(10);
+        playSuccessSound();
+      } else {
+        feedback.textContent = "😊 Yuk coba lagi! Kamu pasti bisa!";
+        feedback.className = "feedback incorrect";
+        buttonElement.classList.add('shake');
+      }
+      
+      setTimeout(() => {
+        buttonElement.classList.remove('celebrate', 'shake');
+        // Re-enable buttons after 3 seconds
+        setTimeout(() => {
+          buttons.forEach(btn => btn.disabled = false);
+          feedback.textContent = '';
+          feedback.className = 'feedback';
+        }, 3000);
+      }, 1000);
+    }
+
+    // Game 1: Matching Game
+    function selectCard(card) {
+      if (card.classList.contains('matched') || card.classList.contains('selected')) {
+        return;
+      }
+      
+      card.classList.add('selected');
+      selectedCards.push(card);
+      
+      if (selectedCards.length === 2) {
+        setTimeout(checkMatch, 1000);
+      }
+    }
+
+    function checkMatch() {
+      const [card1, card2] = selectedCards;
+      const feedback = document.getElementById('matching-feedback');
+      
+      if (card1.dataset.pair === card2.dataset.pair) {
+        // Match found
+        card1.classList.add('matched');
+        card2.classList.add('matched');
+        card1.classList.remove('selected');
+        card2.classList.remove('selected');
+        
+        feedback.textContent = "🎉 Bagus! Kamu berhasil mencocokkan!";
+        feedback.className = "feedback correct";
+        
+        matchedPairs++;
+        updateScore(20);
+        playSuccessSound();
+        
+        if (matchedPairs === 3) {
+          setTimeout(() => {
+            feedback.textContent = "🏆 Selamat! Kamu menyelesaikan semua pasangan!";
+            updateLevel();
+          }, 1500);
+        }
+      } else {
+        // No match
+        setTimeout(() => {
+          card1.classList.remove('selected');
+          card2.classList.remove('selected');
+        }, 500);
+        
+        feedback.textContent = "😊 Coba lagi ya! Kamu pasti bisa!";
+        feedback.className = "feedback incorrect";
+      }
+      
+      selectedCards = [];
+      
+      setTimeout(() => {
+        if (feedback.className === "feedback incorrect") {
+          feedback.textContent = '';
+          feedback.className = 'feedback';
+        }
+      }, 2000);
+    }
+
+    // Game 2: Color Game
+    function selectColor(color) {
+      const feedback = document.getElementById('color-feedback');
+      
+      if (color === currentDolphinColor) {
+        feedback.textContent = "🌈 Benar! Warna yang tepat!";
+        feedback.className = "feedback correct";
+        updateScore(15);
+        playSuccessSound();
+        
+        setTimeout(() => {
+          generateRandomColor();
+          feedback.textContent = '';
+          feedback.className = 'feedback';
+        }, 2000);
+      } else {
+        feedback.textContent = "💙 Coba warna yang lain ya!";
+        feedback.className = "feedback incorrect";
+        
+        setTimeout(() => {
+          feedback.textContent = '';
+          feedback.className = 'feedback';
+        }, 2000);
+      }
+    }
+
+    function generateRandomColor() {
+      const colors = ['#74b9ff', '#fd79a8', '#fdcb6e', '#00b894'];
+      currentDolphinColor = colors[Math.floor(Math.random() * colors.length)];
+      
+      const dolphinDisplay = document.getElementById('dolphin-color');
+      dolphinDisplay.style.color = currentDolphinColor;
+      dolphinDisplay.style.textShadow = `0 0 20px ${currentDolphinColor}`;
+    }
+
+    // Game 3: Counting Game
+    function generateDolphins() {
+      currentDolphinCount = Math.floor(Math.random() * 4) + 1;
+      const display = document.getElementById('dolphins-display');
+      display.innerHTML = '';
+      
+      for (let i = 0; i < currentDolphinCount; i++) {
+        const dolphin = document.createElement('span');
+        dolphin.textContent = '🐬';
+        dolphin.style.animationDelay = `${i * 0.2}s`;
+        display.appendChild(dolphin);
+      }
+    }
+
+    function countAnswer(answer) {
+      const feedback = document.getElementById('counting-feedback');
+      
+      if (answer === currentDolphinCount) {
+        feedback.textContent = `🎯 Benar! Ada ${currentDolphinCount} lumba-lumba!`;
+        feedback.className = "feedback correct";
+        updateScore(25);
+        playSuccessSound();
+        
+        setTimeout(() => {
+          generateDolphins();
+          feedback.textContent = '';
+          feedback.className = 'feedback';
+        }, 3000);
+      } else {
+        feedback.textContent = "🔢 Coba hitung lagi dengan teliti ya!";
+        feedback.className = "feedback incorrect";
+        
+        setTimeout(() => {
+          feedback.textContent = '';
+          feedback.className = 'feedback';
+        }, 2000);
+      }
+    }
+
+    // Score and Level Management
+    function updateScore(points) {
+      totalScore += points;
+      document.getElementById('total-score').textContent = totalScore;
+      
+      // Update progress bar
+      const progress = Math.min((totalScore / (currentLevel * 100)) * 100, 100);
+      document.getElementById('progress-fill').style.width = progress + '%';
+      
+      if (totalScore >= currentLevel * 100) {
+        updateLevel();
+      }
+    }
+
+    function updateLevel() {
+      if (currentLevel < 5) {
+        currentLevel++;
+        document.getElementById('current-level').textContent = currentLevel;
+        
+        // Show level up message
+        showLevelUpMessage();
+        
+        // Reset matching game
+        resetMatchingGame();
+      } else {
+        showCompletionMessage();
+      }
+    }
+
+    function showLevelUpMessage() {
+      const message = document.createElement('div');
+      message.innerHTML = `
+        <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                    background: linear-gradient(135deg, #6c5ce7, #a29bfe); color: white; 
+                    padding: 30px; border-radius: 20px; text-align: center; z-index: 1001;
+                    box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+          <h2>🎉 Level ${currentLevel}!</h2>
+          <p>Kamu semakin pintar!</p>
+        </div>
+      `;
+      
+      document.body.appendChild(message);
+      
+      setTimeout(() => {
+        document.body.removeChild(message);
+      }, 3000);
+    }
+
+    function showCompletionMessage() {
+      const message = document.createElement('div');
+      message.innerHTML = `
+        <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                    background: linear-gradient(135deg, #00b894, #00cec9); color: white; 
+                    padding: 40px; border-radius: 25px; text-align: center; z-index: 1001;
+                    box-shadow: 0 25px 80px rgba(0,0,0,0.4);">
+          <h1>🏆 SELAMAT!</h1>
+          <p>Kamu telah menyelesaikan semua level!</p>
+          <p>Skor akhir: ${totalScore}</p>
+          <p>🐬 Kamu adalah ahli lumba-lumba! 🐬</p>
+          <button onclick="resetAllGames()" style="background: white; color: #00b894; border: none; 
+                         padding: 15px 30px; border-radius: 15px; font-size: 1.2rem; 
+                         cursor: pointer; margin-top: 20px; font-weight: bold;">
+            🔄 Main Lagi
+          </button>
+        </div>
+      `;
+      
+      document.body.appendChild(message);
+      
+      // Add celebration animation
+      createConfetti();
+    }
+
+    function resetMatchingGame() {
+      const cards = document.querySelectorAll('.game-card');
+      cards.forEach(card => {
+        card.classList.remove('matched', 'selected');
+      });
+      matchedPairs = 0;
+      selectedCards = [];
+    }
+
+    function resetAllGames() {
+      totalScore = 0;
+      currentLevel = 1;
+      document.getElementById('total-score').textContent = '0';
+      document.getElementById('current-level').textContent = '1';
+      document.getElementById('progress-fill').style.width = '0%';
+      
+      resetMatchingGame();
+      generateRandomColor();
+      generateDolphins();
+      
+      // Remove completion message
+      const messages = document.querySelectorAll('div[style*="position: fixed"]');
+      messages.forEach(msg => {
+        if (msg.parentNode === document.body) {
+          document.body.removeChild(msg);
+        }
+      });
+    }
+
+    // Sound effects
+    function playSuccessSound() {
+      if (typeof(Audio) !== "undefined") {
+        try {
+          const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+          const oscillator = audioContext.createOscillator();
+          const gainNode = audioContext.createGain();
+          
+          oscillator.connect(gainNode);
+          gainNode.connect(audioContext.destination);
+          
+          // Play a happy melody
+          const notes = [523, 659, 784]; // C, E, G
+          let noteIndex = 0;
+          
+          const playNote = () => {
+            if (noteIndex < notes.length) {
+              oscillator.frequency.value = notes[noteIndex];
+              noteIndex++;
+              setTimeout(playNote, 200);
+            }
+          };
+          
+          oscillator.type = 'sine';
+          gainNode.gain.setValueAtTime(0.2, audioContext.currentTime);
+          gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.6);
+          
+          oscillator.start(audioContext.currentTime);
+          oscillator.stop(audioContext.currentTime + 0.6);
+          playNote();
+        } catch (e) {
+          console.log('Audio not supported');
+        }
+      }
+    }
+
+    // Confetti animation
+    function createConfetti() {
+      const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57'];
+      
+      for (let i = 0; i < 50; i++) {
+        setTimeout(() => {
+          const confetti = document.createElement('div');
+          confetti.style.position = 'fixed';
+          confetti.style.left = Math.random() * 100 + '%';
+          confetti.style.top = '-10px';
+          confetti.style.width = '10px';
+          confetti.style.height = '10px';
+          confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+          confetti.style.borderRadius = '50%';
+          confetti.style.zIndex = '1002';
+          confetti.style.animation = 'fall 3s linear forwards';
+          
+          // Add CSS animation
+          if (!document.querySelector('#confetti-style')) {
+            const style = document.createElement('style');
+            style.id = 'confetti-style';
+            style.textContent = `
+              @keyframes fall {
+                to {
+                  transform: translateY(100vh) rotate(360deg);
+                  opacity: 0;
+                }
+              }
+            `;
+            document.head.appendChild(style);
+          }
+          
+          document.body.appendChild(confetti);
+          
+          setTimeout(() => {
+            if (confetti.parentNode) {
+              document.body.removeChild(confetti);
+            }
+          }, 3000);
+        }, i * 100);
+      }
+    }
+
+    // Initialize games on page load
+    window.addEventListener('load', () => {
+      generateRandomColor();
+      generateDolphins();
+      
+      // Add welcome message
+      setTimeout(() => {
+        const welcome = document.createElement('div');
+        welcome.innerHTML = `
+          <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                      background: linear-gradient(135deg, #74b9ff, #0984e3); color: white; 
+                      padding: 30px; border-radius: 20px; text-align: center; z-index: 1001;
+                      box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+            <h2>🐬 Selamat Datang!</h2>
+            <p>Ayo belajar bersama lumba-lumba!</p>
+            <p>Selesaikan game untuk mendapat poin!</p>
+          </div>
+        `;
+        
+        document.body.appendChild(welcome);
+        
+        setTimeout(() => {
+          document.body.removeChild(welcome);
+        }, 4000);
+      }, 1000);
+    });
+
+    // Accessibility features
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        // Close navigation menu
+        navMenu.classList.remove("open");
+        navMenu.classList.add("close");
+        document.body.classList.remove("nav-open");
+      }
+    });
+
+    // Add high contrast mode toggle
+    function toggleHighContrast() {
+      document.body.classList.toggle('high-contrast');
+    }
+
+    // Add keyboard navigation for games
+    document.addEventListener('keydown', (e) => {
+      if (e.key >= '1' && e.key <= '4') {
+        const num = parseInt(e.key);
+        countAnswer(num);
+      }
+    });
+  </script>
+</body>
+</html>
