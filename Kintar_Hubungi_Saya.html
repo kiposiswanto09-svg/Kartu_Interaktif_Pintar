@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kintar - Belajar Inklusif Interaktif</title>
+  <link rel="stylesheet" href="Kintar.css" />
+</head>
+<body>
+    <div>
+        <!--Navigation-->
+        <nav>
+            <ul class="nav-list-container">
+                <li class="nav-list"><a href="Kintar.html">Home</a></li>
+                <li class="nav-list"><a href="Tentang_Saya.html">Tentang Saya</a></li>
+                <li onclick="scrollToSection('hubungi')" class="nav-list">Hubungi Saya</li>
+                <li class="nav-list"><a href="Kintar.html #produk">Produk</a></li>
+                <li onclick="scrollToSection('Kintar.html #manfaat')" class="nav-list">Manfaat</li>
+                <li onclick="scrollToSection('Kintar.html #lokasi')" class="nav-list">Lokasi</li>
+            </ul>
+        </nav>
+        <div class="container">
+            <h2>Hubungi Saya</h2>
+            <form id="contactForm">
+                <label for="name">Nama</label>
+                    <input type="text" id="name" name="name" placeholder="Nama Anda.." required />
+
+                <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email Anda.." required />
+
+                <label for="message">Pesan</label>
+                    <textarea id="message" name="message" placeholder="Tulis pesan.." rows="5" required></textarea>
+
+                <input type="submit" value="Kirim Pesan" />
+                    <p id="formFeedback" class="feedback"></p>
+            </form>
+        </div>
+         <!-- Footer -->
+        <footer class="footer">
+            <p>© 2025 Kintar. Dibuat oleh Taufik Hidayat - Mahasiswa UNTIRTA</p>
+        <div class="sosmed">
+            <a href="https://www.facebook.com/taufik.hidayat.416718" target="_blank"><img src="FB.png" alt="Facebook"></a>
+            <a href="https://instagram.com/kiposis_official" target="_blank"><img src="IG.png" alt="Instagram"></a>
+            <a href="https://wa.me/082258038059" target="_blank"><img src="WA.png" alt="WhatsApp"></a>
+            <a href="mailto:taufikkipo3@gmail.com"><img src="Gmail.png" alt="Gmail"></a>
+        </div>
+        </footer>
+    </div>
+    <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("formFeedback").textContent = "Terima kasih! Pesan Anda terkirim 😊";
+      document.getElementById("formFeedback").style.color = "#16a34a";
+      this.reset();
+    });
+  </script>
+</body>
+</html>  

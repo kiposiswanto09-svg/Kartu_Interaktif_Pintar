@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kintar - ikan emas</title>
+  <link rel="stylesheet" href="bebek.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+
+<body>
+  <div class="utama">
+    <!-- Navigasi -->
+    <header class="nav-container">
+      <div class="nav-logo">
+        <i id="nav-on" class="fa fa-bars" aria-label="Buka Menu"></i>
+      </div>
+    </header>
+
+    <nav id="nav-menu" class="close" aria-label="Menu Navigasi">
+      <div class="nav-menu-action">
+        <h4>KINTAR</h4>
+        <i id="nav-close" class="fa fa-xmark" aria-label="Tutup Menu"></i>
+      </div>
+      <ul class="nav-list-container">
+        <li class="nav-list"><i class="fa fa-house"></i><a href="index.html">Home</a></li>
+        <li class="nav-list"><i class="fa-regular fa-circle-dot"></i><a href="Tentang.html">Tentang Saya</a></li>
+        <li class="nav-list"><i class="fa fa-code-branch"></i><a href="Hubungi.html">Hubungi Saya</a></li>
+      </ul>
+    </nav>
+
+    <!-- Konten -->
+<main class="content">
+
+  <!-- Judul + Gambar + Suara -->
+ <section class="info-step active">
+        <h2 onclick="playAudio('audioJudul')" class="klik-audio">
+          ikan mas🐠
+        </h2>
+        <audio id="audioJudul" src=""></audio>
+        
+<video src="ikan mas GIF.mp4"
+       width="50%"
+       autoplay
+       loop
+       muted
+       playsinline>
+</video>
+
+        <audio id="audioFoto" src=""></audio>
+        <p class="source">
+          sumber gambar:
+          <a href="https://makeagif.com/gif/the-common-carp-or-european-carp-cyprinus-carpio-grwY9J" 
+          target="_blank">makeagif</a>
+        </p>
+
+        <button class="next-btn">▶ lanjut</button>
+      </section>
+      <!-- ================= HALAMAN MENU ================= -->
+      <section id="materi" class="info-step menu-page">
+        <h2>materi ikan emas</h2>
+
+        <button onclick="goToStepById('tubuh')">bagian tubuh ikan mas</button>
+        <button onclick="goToStepById('bergerak')">cara bergerak ikan mas</button>
+        <button onclick="goToStepById('pertumbuhan')">pertumbuhan ikan mas</button>
+        <button onclick="goToStepById('perkembang')">perkembangan ikan mas</button>
+        <button onclick="goToStepById('makanan')">makanan ikan mas</button>
+        <button onclick="goToStepById('soal')">pertanyaan ikan mas</button>
+        <button class="prev-btn">◀ kembali</button>
+      </section>
+      <!-- Bagian tubuh hewan -->
+      <section id="tubuh" class="info-step menu-page">
+         <div class="ciri-ciri">
+<img onclick="playAudio('ini ikan')" class="klik-audio"
+src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAlAMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABgcDBAUCAQj/xAA8EAABAwIEBQIEAwYEBwAAAAABAAIDBBEFEiExBhNBUWEicQcygZEUI/BCUoKhwdEVcqKxFiQzNENisv/EABgBAQEBAQEAAAAAAAAAAAAAAAADAgQB/8QAIBEAAwEBAAMAAgMAAAAAAAAAAAECEQMSITFRYRNBQv/aAAwDAQACEQMRAD8AvFERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREARFinnjp2GSaRrGDq42QGVF4ilZMwPjeHNOxBXtAEREAREQBERAEREAREQBERAEREAReXvDGlznBrRuTsFDOKOOqWjjkpMFeysryLXB9Efudiddl43h6k38OxxNxPQYBTudPIH1BbeOBp1cel+wVcuxOux2Y1mI1EnLBLmRRjRrezRt/EdB5Ucrm1s9S6oxJrnyuOch7tCT1P6t/svQxOpjJZyiACLsFreP19sq5et3XqTt5c4j3X0t/g7Eoaij5Ic0EfI0HS3YE6n3UkBuqGgx+SMte5xgfuC06/cb/AFP1K7+F8a4nz2hmINlZ1bMAb/yv/XwtR0crKJdOXk9kttFG8I4upK2zKkcmXa41af6hSJjg9oc0gg7EK83NfCFS5+npEWnieJUmF0zqiunbFGNid3HsB1K0ZNxfLqrOIOPcRq5eXhF6WAH5rAyPHudGqScB8QTYhCaPEXOdUsuWSPdcvHY6bheeSNOWiYIiL0yEREARFFOLOMYMGe6jow2euy3cL+mId3dz4XjeHqTfwkGI4lR4ZTmevnZDH0zHU+ANyVBcb+IMx5rMJgbCxkjY3TztzFt+uQbD3USdVVmMSxVVbMah1QHsfzGnLqNGkbAX6hbTmGOnNU2rbFEKmKJkoZrE8CxY87lp7+/1g+3vEdE8cW0fc2I4vNEcWqKyqtUODg4ta0NF/UGjRze9tRZYYKPlUrOfHTMMdEx5cLvy+u4eP3mnr1Hhb9K6CCtgkZFMxrMVmb6ybwvN7WsPldbb7dFqGoLaKmZFTtjP4CZgGUnlvuTl1/ZPQHrdSdNlVKSPstOyOWSlMznRiTlCO92x52ZmgO3LbjQ9Oy1rRCHmOe/TkyagegH05h9QQW7dV6pKmWadzA0A82FkTXen1CwdH59NzY+F7fG/nM/Dzs5edoYXE2I5rmtv/mADT/7Ad1N/Taw1JKCMxycumLh+czJqLODtgfO7fKwtoYDI6NjA8BzruzBoy2GVx/iGU+Stp1MZqaJ5nkAcGi8Y9Q/NsDr1adCPK58dK2khaHxub+JLo5STYtbmcdP4m6Hrf2WtrPpn1+Ddjo5KSpjMTnNYbFzHvBIIF3t0/d+uhCsnhrGsMp6Qtmr8pcQcsrXtDfF3XVWRVVTJTQulga2WVxMjS8hsQfdshv4AHsStl+NyQ01OJKKSNrnNeR1yMuxo1H7V72K1DarcMWlSzSY8U/E6CgkkpsJpXTvGn4mQEMB8Dc/y+qgcuIVmL1X4qvqXzTO6uPyjsANvoutJUQuORr2ufAS1922LnX10PZv87riRugp6mXmENaDoC5unjXRXfTVpOJx4dKjhY541BsdyL/y/upvwTRPOKCQBwZE0l31Fgo7g1O6RjXNNRd21rEeNiFZuAYecOw5kTv8AqEl7z5Kny2q012eLDpoviLqOU+oijnG3EsfDmFmVpaaqT0wsP+/0QGl8QeMWcPULoKMh+IyizBvyx+8f6BURNWVslRLUSSF75HFzidS4ndZ66vnxLEHSzyGWomfclx3uvUlM6grIWVdnxvaHabDwvHUr0ykS37Rko8YnhML5mSmGN1yWGxAtqANte6lGCVT5oXslqHSUsT2zVfOju2SJ17XI6jNfRYpcNppaZsjZo2XGgBvcLX4RkigxCtwqoaJIntFu4YTZ1j03H2XBdS06k7FLTSZ262aoi/DTz1MU0kAkiq2ulN3cw/lHQaGw3/y22Ws6ivSTR1RiDm0zKCY5C60xOZjvbUH7LqTw01fJaYyZ63UhrhaP8O70nvZxLT9/C1Q4VENY9lNI50jWVRBN7uaLNb7DKFDyb9m/HEe6GOF08LXOkL31THGzA382BuU39+/us1KIZJKcNhc78QWVLgX6N50hfYW7PYPoSsLIqmF8kscLWuaczXFv75Bldr4vr0XUkjfVOdDTSiJhDoo8hsGhzfQRbYDUhUXqjOajnyQz3htFyW5WSPc5hblz5nvuT2dY+LBYa/B5J6W0g5kobZxdsHWaD/qF/qpDHSQzyukIfIS1z9di2UBp/wDm/RdOrpKpuGVE1LRuqJ2N9ETSBmO3XxYqjlv4YVZ9K0jw90sZZKxh1IdqRYE5h/qH2XQxDD31FT+IMb2SEnIQRlYXAXeQe1rNG60cOxh82Kf8wXU9Sx93xPuzKd7W6H3Vx0kVHilBFLNTxS3G5aP0FjnNVXi/RrrUyt+oqevp7RwOc/mOmDQM7bPOgBJ8nc/RRaZ88cj5IZnZBJ6i2+199NvqLdLru/FPDMYwXEmPjdJ/hchIhlaflv8A+M9rW07hRmm5rY7sIcAL5TfX2tqD5XXMNT7OfdeouH4b0sdXSjECWOyEtBa3Kc3lvQqejZU58OcdZQ1WUyvEMlmyxvaC4Hobjf3PRXEDcDVa5YlhPrvlp9REVSZ5ke2Nhe9wa1ouSdgF+dfiLxTBxBjfPpP+zibljY5xBeerz2vp9l+ha6AVVHPTkAiWNzDfbUEdF+cW/DjiCjxY0+I4bMadoLnVMTg+PKNS4HfYbGxXlPFpqFrwjwraenpWPHMfVO9Ru3Ly3A6dNWka77rcqMSlxGBma35Rs2wtYdlaVP8ABrD5WNe7EHlhFxlZe4+67lB8L8Go4w0F8hvclw3XPTp+1PsunM+nRU+E09VMfUHljBv09l54exCJ+O1b4Hky5eXFZuhN9TfxZX1R8M0FLlswuy7XAtbsqr4uwL/h3iieemhDYp3c+EgW3+YfQ3+4U/478XqKz0h0kiTYbA+oiJII9bSLN2b1H1JXcjoeW9pte1S59gNNQdPYKOYHx0yVzIp4BnGjm2tf2KsajdTVVOyeFoLHi4U+HJ16fpjvbl/ohmLww0VMZJGsytifEc7rWa46/UrT4fibWASSztYDY+kak9/GmilvEnDsONUcsDpXx548osfSD0dbuCqgpK6rwjEpaCpvHPE8sc0ncg+dD4v9x1968un+TXG4qcf0uXD6ShFhG8yEX+Y911Q0NFgLBQPAsWzvizOOe9ndwfLXbfdTxhzMaQb3C6OFNrGc3eHL+nHx3hbCMeyuxCmBnZ8s8ZySD+IbjwVt4PhVPhFGKWlLzGDf1m5W+ivi3SOvMNDG8KpcawyfD6+MPhmbY92no4eRuqHxTB6vh3E5cNrm3I9UMttJo+jh/UdF+hiuDxlw8ziHB304s2qj9dNIf2X9j4Ox+/ReVOm+d+LKTo2Wl5rNLbkfr+aurgrFX4lhTWzG80FmOdf5h0KpqhdNQVj4KphikY8tc1w2OxCsjgGVkeJSRwusyWPVl7i41BH3KjNPzwr1leOk+REXQcwWGpjEsT2u+Qj1DuOyzIgMFHCKelhgG0bAz7CyzoiALkcSYFT47RiKY5JIzmiktfKevuCuuiHqee0UdNhMmEYtyaxhieDv09/IVu8OsDMLj10cbjW62MSwyjxOAQ1sDJGj5bjVvseiyUNIyipo6eIu5bNG5jc2U55pV5Fb6+c4zOdVE+NeDqfH2fioLRYhEPS/pIB+yf7qWottaSTaeopOOGahqGxVkb4Z4DrG++lux7foK2eH6r8XhcMl9QMpW1W0NLWx5KqBko6ZhqPY7heaCggoIzHTNLWE3y3uApzzc1v9FunVXPv6baIiqQCHZEQEB+IPCEuIu/xPCmZqoD82Ju7x3Hnx1WL4X4XVNM1fVxmJrbxsY5tiT1PhWFYJYLPit035trGfURFowEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQHxERAEREAREQBERAEREAREQBERAEREAREQH1ERAf/Z">
+         <audio id="ini ikan" 
+         src="ini ikan emas.mp3">
+        </audio>
+        <h3>bagian tubuh ikan emas</h3>
+
+<div class="ciri-ciri">
+  <img src="https://media.istockphoto.com/id/480737035/id/foto/tampilan-samping-sirip-punggung-ikan-mas-crucian.jpg?s=1024x1024&w=is&k=20&c=HQHhtln3tOUJuKmCQhtxINcbDVaTBEF2QzjWnn9-YDs=" 
+  alt="sirip ikan mas"
+    onclick="playAudio('audioSiripjpg')" class="klik-audio">
+  <audio id="audioSiripjpg" src="ini sirip ikan emas.mp3"></audio>
+  <span onclick="playAudio('audioSirip')" class="teks-audio">
+    sirip ikan mas membantu berenang
+  </span>
+  <audio id="audioSirip" src="sirip ikan emas memb.mp3"></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXKHigWFX43CSefExFc2-dPu7ipcRovA1zmSkp_5Y3MQ&s=10" 
+  alt="ekor ikan mas"
+    onclick="playAudio('audioEkorjpg')" class="klik-audio">
+  <audio id="audioEkorjpg" src=""></audio>
+  <span onclick="playAudio('audioEkor')" class="teks-audio">
+    ekor ikan mas membantu bergerak di air
+  </span>
+  <audio id="audioEkor" src="ekor ikan emas memba.mp3"></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="https://www.shutterstock.com/image-photo/fish-gills-exposed-view-when-260nw-2706877331.jpg" 
+  alt="insang ikan emas"
+    onclick="playAudio('audioInsangjpg')" class="klik-audio">
+  <audio id="audioInsangjpg" src=""></audio>
+  <span onclick="playAudio('audioInsang')" class="teks-audio">
+    insang ikan mas digunakan untuk bernapas di dalam air
+  </span>
+  <audio id="audioInsang" src=""></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNiL4sGpi5Ra325aKp89josNL_NuOlSpgYfmJlZFPOjg&s=10" 
+  alt="sisik ikan emas"
+    onclick="playAudio('audioSisikjpg')" class="klik-audio">
+  <audio id="audioSisikjpg" src=""></audio>
+  <span onclick="playAudio('audioSisik')" class="teks-audio">
+    sisik ikan mas melindungi tubuh
+  </span>
+  <audio id="audioSisik" src=""></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="data:image/jpeg;base64,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" 
+  alt="mata ikan emas"
+    onclick="playAudio('audioMatajpg')" class="klik-audio">
+  <audio id="audioMatajpg" src=""></audio>
+  <span onclick="playAudio('audioMata')" class="teks-audio">
+    mata ikan mas untuk melihat
+  </span>
+  <audio id="audioMata" src=""></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="https://media.istockphoto.com/id/668196996/id/foto/ikan-mas-dengan-mulut-terbuka.jpg?s=1024x1024&w=is&k=20&c=y3MF_gs-bvucZDzHI59FjETCylUemtMh-cei7YF4V1Y="
+  alt="mulut ikan emas"
+    onclick="playAudio('audioMulutjpg')" class="klik-audio">
+  <audio id="audioMulutjpg" src=""></audio>
+  <span onclick="playAudio('audioMulut')" class="teks-audio">
+    mulut ikan mas digunakan untuk makan
+  </span>
+  <audio id="audioMulut" src=""></audio>
+</div>
+
+
+        <div class="nav-btn">
+          <button class="prev-btn">◀ kembali</button>
+          <button class="next-btn">▶ lanjut</button>
+        </div>
+      </section>
+      <!--menu bagian tubuh hewan-->
+      <section id="bagian" class="info-step menu-page">
+        <button onclick="goToStepById('3D')">3D ikan emas bagian tubuh</button>
+        <button onclick="goToStepById('videobagian')">video bagian tubuh ikan emas animasi</button>
+        <button class="prev-btn">◀ kembali</button>
+      </section>
+      <!--3D hewan bagian tubuh hewan-->
+      <section id="3D" class="info-step">
+  <h3>3D ikan emas bagian tubuh</h3>
+
+  <iframe
+    title="3D Ikan emas"
+    src="https://sketchfab.com/models/61ec706d08d644c88dbfd1085b66ba6f/embed?autostart=1&ui_infos=0&ui_hint=2"
+    width="100%"
+    height="400"
+    frameborder="0"
+    allow="autoplay; fullscreen; xr-spatial-tracking"
+    allowfullscreen>
+  </iframe>
+
+  <div class="nav-btn">
+    <button class="prev-btn">◀ kembali</button>
+  </div>
+</section>
+
+      <!-- video bagian tubuh hewan -->
+      <section id="videobagian" class="info-step">
+  <h3>video bagian tubuh ikan emas</h3>
+
+  <iframe
+    width="100%"
+    height="315"
+    src="https://www.youtube.com/embed/TWtErfhHg8E"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+
+  <p class="source">
+    sumber video:
+    <a href="https://youtu.be/z1LXs0MpwFo" target="_blank">YouTube</a>
+  </p>
+
+  <div class="nav-btn">
+    <button onclick="goToStepById('bagian')">◀ kembali</button>
+  </div>
+</section>
+      <!-- hewan bergerak -->
+      <section id="bergerak" class="info-step">
+        <h3>ikan emas bergerak</h3>
+
+<div class="ciri-ciri">
+  <img src="data:image/jpeg;base64,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awyfD6+MPhmbY92no4eRuqHxTB6vh3E5cNrm3I9UMttJo+jh/UdF+hiuDxlw8ziHB304s2qj9dNIf2X9j4Ox+/ReVOm+d+LKTo2Wl5rNLbkfr+aurgrFX4lhTWzG80FmOdf5h0KpqhdNQVj4KphikY8tc1w2OxCsjgGVkeJSRwusyWPVl7i41BH3KjNPzwr1leOk+REXQcwWGpjEsT2u+Qj1DuOyzIgMFHCKelhgG0bAz7CyzoiALkcSYFT47RiKY5JIzmiktfKevuCuuiHqee0UdNhMmEYtyaxhieDv09/IVu8OsDMLj10cbjW62MSwyjxOAQ1sDJGj5bjVvseiyUNIyipo6eIu5bNG5jc2U55pV5Fb6+c4zOdVE+NeDqfH2fioLRYhEPS/pIB+yf7qWottaSTaeopOOGahqGxVkb4Z4DrG++lux7foK2eH6r8XhcMl9QMpW1W0NLWx5KqBko6ZhqPY7heaCggoIzHTNLWE3y3uApzzc1v9FunVXPv6baIiqQCHZEQEB+IPCEuIu/xPCmZqoD82Ju7x3Hnx1WL4X4XVNM1fVxmJrbxsY5tiT1PhWFYJYLPit035trGfURFowEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQHxERAEREAREQBERAEREAREQBERAEREAREQH1ERAf/Z"
+  alt="ikan emas berenang">
+  <span onclick="playAudio('audioRenang')" class="teks-audio">
+    ikan emas berenang di air
+  </span>
+  <audio id="audioRenang" src=""></audio>
+</div>
+
+
+
+        <div class="nav-btn">
+          <button onclick="goToStepById('materi')"> ◀ kembali</button>
+          <button class="next-btn">▶ lanjut</button>
+        </div>
+      </section>
+      <!--menu hewan bergerak-->
+      <section id="videoBergerak" class="info-step menu-page">
+        <button onclick="goToStepById('videoBerenang')">video ikan emas berenang</button>
+        <button onclick="goToStepById('videoanimasi')">lagu ikan emas berenang</button>
+        <button class="prev-btn">◀ kembali</button>
+      </section>
+      <!--hewan bergerak-->
+      <section id="videoBerenang" class="info-step">
+        <h3>video ikan emas berenang</h3>
+
+        <iframe width="100%" height="315" 
+        src="https://www.youtube.com/embed/RZvMRES6rAg" 
+        title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+
+        <p class="source">
+          sumber video:
+          <a href="https://vt.tiktok.com/ZSVAr2m3b/" target="_blank">tiktok</a>
+        </p>
+
+        <div class="nav-btn">
+          <button class="prev-btn">◀ kembali</button>
+        </div>
+      </section>
+      <!--lagu hewan bergerak-->
+      <section id="videoanimasi" class="info-step">
+        <h3>lagu ikan emas</h3>
+
+        <iframe width="100%" height="315" src="https://www.youtube.com/watch?v=hmLpapk5Hvg" 
+        title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+
+        <p class="source">
+          sumber video:
+          <a href="" target="_blank">YouTube</a>
+        </p>
+
+        <div class="nav-btn">
+          <button onclick="goToStepById('bergerakhewan')"> ◀ kembali</button>
+        </div>
+      </section>
+
+
+      <!-- pertumbuhan hewan -->
+      <section id="pertumbuhan" class="info-step">
+        <h3>pertumbuhan ikan badut</h3>
+
+<div class="ciri-ciri">
+  <img src="telur ikan mas.jpeg"  
+  alt="telur ikan mas"
+    onclick="playAudio('audioTelurjpg')" class="klik-audio">
+  <audio id="audioTelurjpg" src=""></audio>
+  <span onclick="playAudio('audioTelur')" class="teks-audio">
+    telur ikan emas akan menetas menjadi larva ikan
+  </span>
+  <audio id="audioTelur" src=""></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="anak ikan mas.jpeg"  
+  alt="anak ikan mas"
+    onclick="playAudio('audioAnakjpg')" class="klik-audio">
+  <audio id="audioAnakjpg" src="ini anak ikan badut.mp3"></audio>
+  <span onclick="playAudio('audioAnak')" class="teks-audio">
+    anak ikan emas tumbuh menjadi ikan muda
+  </span>
+  <audio id="audioAnak" src="anak ikan badut tumb.mp3"></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="ikan mas melahirkan telur.jpeg" alt="ikan emas dewasa"
+    onclick="playAudio('audioDewasajpg')" class="klik-audio">
+  <audio id="audioDewasajpg" src=""></audio>
+  <span onclick="playAudio('audioDewasa')" class="teks-audio">
+    ikan emas dewasa dapat berkembang biak dan bertelur
+  </span>
+  <audio id="audioDewasa" src=""></audio>
+</div>
+
+        <div class="nav-btn">
+          <button onclick="goToStepById('materi')">◀ Kembali</button>
+          <button class="next-btn">▶ lanjut</button>
+        </div>
+      </section>
+      <!--menu pertumbuhan-->
+      <section id="menu-pertumbuhan" class="info-step menu-page">
+        <button onclick="goToStepById('telurmenetas')">video pertumbuhan telur menetas</button>
+        <button onclick="goToStepById('bebekdewasa')">video pertumbuhan anak ikan sampai ikan dewasa</button>
+        <button class="prev-btn">◀ kembali</button>
+      </section>
+      <!--video pertumbuhan telur-->
+      <section id="telurmenetas" class="info-step">
+        <h3>video pertumbuhan telur menetas</h3>
+
+        <iframe width="100%" height="315" src="" 
+        title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+
+        <p class="source">
+          sumber video:
+          <a href="" target="_blank">tiktok</a>
+        </p>
+
+        <div class="nav-btn">
+          <button class="prev-btn">◀ kembali</button>
+        </div>
+      </section>
+      <!--video pertumbuhan bebek-->
+      <section id="bebekdewasa" class="info-step">
+        <h3>video pertumbuhan anak ikan sampai ikan dewasa</h3>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/vgCSQ_qbx0M" 
+        frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+
+        <p class="source">
+          sumber video:
+          <a href="https://vt.tiktok.com/ZS49gevmF/" target="_blank">tiktok</a>
+        </p>
+        <div class="nav-btn">
+          <button onclick="goToStepById('menu-pertumbuhan')">◀ kembali</button>
+        </div>
+      </section>
+      <!-- makanan hewan -->
+      <section id="makanan" class="info-step">
+        <h3>makanan ikan badut</h3>
+
+<div class="ciri-ciri">
+  <img src="https://png.pngtree.com/png-clipart/20250612/original/pngtree-the-frustrations-of-an-enraged-plankton-in-a-marine-world-full-png-image_21178127.png" alt="plankton"
+    onclick="playAudio('audioPlanktonjpg')" class="teks-audio">
+  <audio id="audioPlanktonjpg" src="ini plankton.mp3"></audio>
+  <span onclick="playAudio('audioPlankton')" class="teks-audio">
+    ikan emas makan plankton
+  </span>
+  <audio id="audioPlankton" src=""></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc5_2PFpJgvPpGWYHvRddSMhGoeaETbXKX44yPKKb5cQ&s=10" 
+  alt="cacing sutra"
+    onclick="playAudio('audioUdangjpg')" class="teks-audio">
+  <audio id="audioUdangjpg" src=""></audio>
+  <span onclick="playAudio('audioUdang')" class="teks-audio">
+    ikan emas makan cacing sutra
+  </span>
+  <audio id="audioUdang" src=""></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="https://www.greeners.co/wp-content/uploads/2022/11/Sandworm-Umpan-Pancing-Favorit-bagi-Para-Nelayan.jpg" 
+  alt="cacing laut"
+    onclick="playAudio('audioCacingjpg')" class="teks-audio">
+  <audio id="audioCacingjpg" src="ini cacing laut.mp3"></audio>
+  <span onclick="playAudio('audioCacing')" class="teks-audio">
+    ikan emas makan cacing laut
+  </span>
+  <audio id="audioCacing" src=""></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUwaaWRbHR6WU0HN0LX4yRwjFIlvhHm8SLqjely2__iQ&s=10" 
+  alt="alga"
+    onclick="playAudio('audioAlgajpg')" class="teks-audio">
+  <audio id="audioAlgajpg" src="ini alga.mp3"></audio>
+  <span onclick="playAudio('audioAlga')" class="teks-audio">
+    ikan emas makan alga
+  </span>
+  <audio id="audioAlga" src=""></audio>
+</div>
+
+        <div class="nav-btn">
+          <button onclick="goToStepById('materi')">◀ Kembali</button>
+        </div>
+      </section>
+      <!--perkembang biak hewan-->
+      <section id="perkembang" class="info-step">
+        <h3>perkembangbiakan ikan badut</h3>
+
+<div class="ciri-ciri">
+  <img src="ikan mas melahirkan telur.jpeg"  
+  alt="ikan badut bertelur"
+    onclick="playAudio('audioTelurjpg')" class="klik-audio">
+  <audio id="audioTelurjpg" src=""></audio>
+  <span onclick="playAudio('audioBertelur')" class="teks-audio">
+    ikan emas berkembang biak dengan bertelur
+  </span>
+  <audio id="audioBertelur" src="ikan badut berkemban.mp3"></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="ikan emas menjaga telur.jpeg" 
+  alt="ikan emas menjaga telur"
+    onclick="playAudio('audioMenjagajpg')" class="klik-audio">
+  <audio id="audioMenjagajpg" src=""></audio>
+  <span onclick="playAudio('audioMenjaga')" class="teks-audio">
+    induk ikan emas menjaga dan membersihkan telur
+  </span>
+  <audio id="audioMenjaga" src=""></audio>
+</div>
+
+<div class="ciri-ciri">
+  <img src="anak ikan mas.jpeg"
+  alt="telur ikan badut menetas"
+    onclick="playAudio('audioMenetasjpg')" class="klik-audio">
+  <audio id="audioMenetasjpg" src=""></audio>
+  <span onclick="playAudio('audioMenetas')" class="teks-audio">
+    telur menetas menjadi anak ikan emas
+  </span>
+  <audio id="audioMenetas" src=""></audio>
+</div>
+
+
+        <div class="nav-btn">
+          <button onclick="goToStepById('materi')">◀ Kembali</button>
+          <button class="next-btn">▶ Lanjut</button>
+        </div>
+      </section>
+      <!--video perkembang biak hewan-->
+      <section class="info-step">
+        <h3>video ikan bertelur</h3>
+        <iframe width="100%" height="315" src="" 
+        frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        <p class="source">
+          sumber video:
+          <a href="" target="_blank">tiktok</a>
+        </p>
+        <div class="nav-btn">
+          <button onclick="stopVideo(); nextStep()" class="prev-btn">◀ kembali</button>
+        </div>
+      </section>
+      <!-- Aktivitas -->
+
+      <section id="soal" class="info-step">
+        <h2>hewan yang hidup di air?</h2>
+
+        <button onclick="jawaban('salah')">
+          <img src="https://w7.pngwing.com/pngs/265/874/png-transparent-cats-pets.png" 
+          alt="kucing">kucing</button>
+        <button onclick="jawaban('salah')">
+          <img src="https://pngimg.com/uploads/duck/duck_PNG5029.png" 
+          alt="bebek">bebek</button>
+        <button onclick="jawaban('benar')">
+          <img src="data:image/jpeg;base64,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awyfD6+MPhmbY92no4eRuqHxTB6vh3E5cNrm3I9UMttJo+jh/UdF+hiuDxlw8ziHB304s2qj9dNIf2X9j4Ox+/ReVOm+d+LKTo2Wl5rNLbkfr+aurgrFX4lhTWzG80FmOdf5h0KpqhdNQVj4KphikY8tc1w2OxCsjgGVkeJSRwusyWPVl7i41BH3KjNPzwr1leOk+REXQcwWGpjEsT2u+Qj1DuOyzIgMFHCKelhgG0bAz7CyzoiALkcSYFT47RiKY5JIzmiktfKevuCuuiHqee0UdNhMmEYtyaxhieDv09/IVu8OsDMLj10cbjW62MSwyjxOAQ1sDJGj5bjVvseiyUNIyipo6eIu5bNG5jc2U55pV5Fb6+c4zOdVE+NeDqfH2fioLRYhEPS/pIB+yf7qWottaSTaeopOOGahqGxVkb4Z4DrG++lux7foK2eH6r8XhcMl9QMpW1W0NLWx5KqBko6ZhqPY7heaCggoIzHTNLWE3y3uApzzc1v9FunVXPv6baIiqQCHZEQEB+IPCEuIu/xPCmZqoD82Ju7x3Hnx1WL4X4XVNM1fVxmJrbxsY5tiT1PhWFYJYLPit035trGfURFowEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQHxERAEREAREQBERAEREAREQBERAEREAREQH1ERAf/Z"  
+          alt="ikan emas">ikan emas</button>
+
+        <p id="feedback-makanan" class="feedback"></p>
+
+        <div class="nav-btn">
+          <button onclick="goToStepById('materi')"> ◀ kembali</button>
+          <button class="next-btn">▶ Lanjut</button>
+        </div>
+      </section>
+
+      <!-- STEP 7: Soal 2 -->
+      <section class="info-step">
+        <h2>hewan apa yang bernapas dengan insang</h2>
+        
+
+        <button onclick="jawaban('benar', 'feedback-tempat')">
+          <img src="data:image/jpeg;base64,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awyfD6+MPhmbY92no4eRuqHxTB6vh3E5cNrm3I9UMttJo+jh/UdF+hiuDxlw8ziHB304s2qj9dNIf2X9j4Ox+/ReVOm+d+LKTo2Wl5rNLbkfr+aurgrFX4lhTWzG80FmOdf5h0KpqhdNQVj4KphikY8tc1w2OxCsjgGVkeJSRwusyWPVl7i41BH3KjNPzwr1leOk+REXQcwWGpjEsT2u+Qj1DuOyzIgMFHCKelhgG0bAz7CyzoiALkcSYFT47RiKY5JIzmiktfKevuCuuiHqee0UdNhMmEYtyaxhieDv09/IVu8OsDMLj10cbjW62MSwyjxOAQ1sDJGj5bjVvseiyUNIyipo6eIu5bNG5jc2U55pV5Fb6+c4zOdVE+NeDqfH2fioLRYhEPS/pIB+yf7qWottaSTaeopOOGahqGxVkb4Z4DrG++lux7foK2eH6r8XhcMl9QMpW1W0NLWx5KqBko6ZhqPY7heaCggoIzHTNLWE3y3uApzzc1v9FunVXPv6baIiqQCHZEQEB+IPCEuIu/xPCmZqoD82Ju7x3Hnx1WL4X4XVNM1fVxmJrbxsY5tiT1PhWFYJYLPit035trGfURFowEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQHxERAEREAREQBERAEREAREQBERAEREAREQH1ERAf/Z" 
+          alt="ikan">ikan emas</button>
+        <button onclick="jawaban('salah', 'feedback-tempat')">
+          <img src="https://www.purwakartaupdate.com/wp-content/uploads/2021/09/burung-pipit.jpg"
+            alt="burung">burung</button>
+        <button onclick="jawaban('salah', 'feedback-tempat')">
+          <img
+            src="https://png.pngtree.com/png-clipart/20220124/ourmid/pngtree-native-chicken-commercially-available-element-material-png-image_4255613.png"
+            alt="ayam">ayam</button>
+
+        <p id="feedback-tempat" class="feedback"></p>
+
+        <div class="nav-btn">
+          <button class="prev-btn">◀ kembali</button>
+          <button class="next-btn">▶ lanjut</button>
+        </div>
+      </section>
+      <section class="info-step">
+        <div class="ciri-ciri">
+          <img src="data:image/jpeg;base64,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" 
+          alt="sisik ikan emas">
+        </div>
+        <h2>bagian tubuh ini milik hewan siapa?</h2>
+
+        <button onclick="jawaban('salah', 'feedback-tempat')">
+          <img
+            src="https://png.pngtree.com/png-clipart/20220124/ourmid/pngtree-native-chicken-commercially-available-element-material-png-image_4255613.png"
+            alt="">ayam</button>
+        <button onclick="jawaban('salah', 'feedback-tempat')">
+          <img src="https://pngimg.com/uploads/duck/duck_PNG5029.png" alt="">bebek</button>
+        <button onclick="jawaban('benar', 'feedback-tempat')">
+          <img
+            src="data:image/jpeg;base64,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awyfD6+MPhmbY92no4eRuqHxTB6vh3E5cNrm3I9UMttJo+jh/UdF+hiuDxlw8ziHB304s2qj9dNIf2X9j4Ox+/ReVOm+d+LKTo2Wl5rNLbkfr+aurgrFX4lhTWzG80FmOdf5h0KpqhdNQVj4KphikY8tc1w2OxCsjgGVkeJSRwusyWPVl7i41BH3KjNPzwr1leOk+REXQcwWGpjEsT2u+Qj1DuOyzIgMFHCKelhgG0bAz7CyzoiALkcSYFT47RiKY5JIzmiktfKevuCuuiHqee0UdNhMmEYtyaxhieDv09/IVu8OsDMLj10cbjW62MSwyjxOAQ1sDJGj5bjVvseiyUNIyipo6eIu5bNG5jc2U55pV5Fb6+c4zOdVE+NeDqfH2fioLRYhEPS/pIB+yf7qWottaSTaeopOOGahqGxVkb4Z4DrG++lux7foK2eH6r8XhcMl9QMpW1W0NLWx5KqBko6ZhqPY7heaCggoIzHTNLWE3y3uApzzc1v9FunVXPv6baIiqQCHZEQEB+IPCEuIu/xPCmZqoD82Ju7x3Hnx1WL4X4XVNM1fVxmJrbxsY5tiT1PhWFYJYLPit035trGfURFowEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQHxERAEREAREQBERAEREAREQBERAEREAREQH1ERAf/Z"
+            alt="ikan emas">ikan emas</button>
+
+        <p id="feedback-tempat" class="feedback"></p>
+
+        <div class="nav-btn">
+          <button class="prev-btn">◀ kembali</button>
+          <button class="next-btn">▶ lanjut</button>
+        </div>
+      </section>
+      <section class="info-step">
+        <div class="ciri-ciri">
+          <img
+            src="telur ikan mas.jpeg"
+            alt="telur ikan emas">
+        </div>
+        <h2>telur ini milik siapa?</h2>
+
+        <button onclick="jawaban('salah', 'feedback-tempat')">
+          <img
+            src="https://png.pngtree.com/png-clipart/20220124/ourmid/pngtree-native-chicken-commercially-available-element-material-png-image_4255613.png"
+            alt="ayam">ayam</button>
+        <button onclick="jawaban('benar', 'feedback-tempat')">
+          <img src="data:image/jpeg;base64,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awyfD6+MPhmbY92no4eRuqHxTB6vh3E5cNrm3I9UMttJo+jh/UdF+hiuDxlw8ziHB304s2qj9dNIf2X9j4Ox+/ReVOm+d+LKTo2Wl5rNLbkfr+aurgrFX4lhTWzG80FmOdf5h0KpqhdNQVj4KphikY8tc1w2OxCsjgGVkeJSRwusyWPVl7i41BH3KjNPzwr1leOk+REXQcwWGpjEsT2u+Qj1DuOyzIgMFHCKelhgG0bAz7CyzoiALkcSYFT47RiKY5JIzmiktfKevuCuuiHqee0UdNhMmEYtyaxhieDv09/IVu8OsDMLj10cbjW62MSwyjxOAQ1sDJGj5bjVvseiyUNIyipo6eIu5bNG5jc2U55pV5Fb6+c4zOdVE+NeDqfH2fioLRYhEPS/pIB+yf7qWottaSTaeopOOGahqGxVkb4Z4DrG++lux7foK2eH6r8XhcMl9QMpW1W0NLWx5KqBko6ZhqPY7heaCggoIzHTNLWE3y3uApzzc1v9FunVXPv6baIiqQCHZEQEB+IPCEuIu/xPCmZqoD82Ju7x3Hnx1WL4X4XVNM1fVxmJrbxsY5tiT1PhWFYJYLPit035trGfURFowEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQHxERAEREAREQBERAEREAREQBERAEREAREQH1ERAf/Z"
+          alt="ikan emas">ikan emas</button>
+        <button onclick="jawaban('salah', 'feedback-tempat')">
+          <img src="https://pngimg.com/uploads/duck/duck_PNG5029.png" alt="bebek">bebek</button>
+
+        <p id="feedback-tempat" class="feedback"></p>
+
+        <div class="nav-btn">
+          <button class="prev-btn">◀ kembali</button>
+          <button class="next-btn">▶ lanjut</button>
+        </div>
+      </section>
+      <!-- STEP 8: Soal 3 -->
+      <section class="info-step">
+        <h2>makanan ikan?</h2>
+
+        <button onclick="jawaban('salah', 'feedback-surai')">
+          <img src="https://s0.bukalapak.com/attachment/068632/jenis_batu_alam_image_1.jpg" alt="batu">batu</button>
+        <button onclick="jawaban('salah', 'feedback-surai')">
+          <img src="https://www.purwakartaupdate.com/wp-content/uploads/2021/09/burung-pipit.jpg"
+            alt="burung_pipit">burung</button>
+        <button onclick="jawaban('benar', 'feedback-surai')">
+          <img
+            src="data:image/jpeg;base64,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"
+            alt="cacing sutra"></button>
+
+        <p id="feedback-surai" class="feedback"></p>
+        <div class="nav-btn">
+          <button class="prev-btn">◀ kembali</button>
+        </div>
+      </section>
+
+      <!-- Audio -->
+      <audio id="suara-benar" src="Hebat! Kamu Benar.mp3"></audio>
+      <audio id="suara-salah" src="salah yuk coba lagi.mp3"></audio>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 KINTAR - Kartu Interaktif Pintar. Dibuat oleh Taufik Hidayat - Mahasiswa UNTIRTA</p>
+      <div class="sosmed">
+        <a href="https://facebook.com/taufik.hidayat.416718" target="_blank"><img
+            src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+        <a href="https://instagram.com/taufik._.hdyt" target="_blank"><img
+            src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+        <a href="https://wa.me/082258038059" target="_blank"><img
+            src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+        <a href="mailto:taufikkipo3@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+            alt="Gmail"></a>
+      </div>
+    </footer>
+    <script>
+
+      /* ================= NAVIGATION ================= */
+      const navOnBtn = document.getElementById("nav-on");
+      const navCloseBtn = document.getElementById("nav-close");
+      const navMenu = document.getElementById("nav-menu");
+
+      if (navOnBtn && navCloseBtn && navMenu) {
+        navOnBtn.addEventListener("click", () => {
+          navMenu.classList.remove("close");
+          navMenu.classList.add("open");
+        });
+
+        navCloseBtn.addEventListener("click", () => {
+          navMenu.classList.remove("open");
+          navMenu.classList.add("close");
+        });
+      }
+
+      /* ================= SLIDE SYSTEM ================= */
+      let currentStep = 0;
+      const steps = document.querySelectorAll(".info-step");
+
+      function showStep(index) {
+        stopAllMedia();
+        steps.forEach(step => step.classList.remove("active"));
+        steps[index].classList.add("active");
+      }
+
+      document.addEventListener("click", function (e) {
+
+        if (e.target.classList.contains("next-btn")) {
+          if (currentStep < steps.length - 1) {
+            currentStep++;
+            showStep(currentStep);
+          }
+        }
+
+        if (e.target.classList.contains("prev-btn")) {
+          if (currentStep > 0) {
+            currentStep--;
+            showStep(currentStep);
+          }
+        }
+      });
+
+      /* ================= STOP ALL MEDIA ================= */
+      function stopAllMedia() {
+
+        // Stop audio & video biasa
+        document.querySelectorAll("audio, video").forEach(media => {
+          media.pause();
+          media.currentTime = 0;
+        });
+
+        // Reset semua iframe (YouTube otomatis berhenti)
+        document.querySelectorAll("iframe").forEach(frame => {
+          const src = frame.src;
+          frame.src = src;
+        });
+      }
+
+      /* ================= AUDIO PLAY ================= */
+      function playAudio(id) {
+        stopAllMedia();
+        const audio = document.getElementById(id);
+        if (audio) audio.play();
+      }
+
+      /* ================= GO TO STEP ================= */
+      function goToStepById(id) {
+        stopAllMedia();
+
+        steps.forEach((step, index) => {
+          step.classList.remove("active");
+
+          if (step.id === id) {
+            step.classList.add("active");
+            currentStep = index;
+          }
+        });
+      }
+
+      /* ================= SOAL SYSTEM ================= */
+      let isLocked = false;
+
+      function jawaban(status) {
+        if (isLocked) return;
+        isLocked = true;
+
+        const step = document.querySelector(".info-step.active");
+        const feedback = step.querySelector(".feedback");
+        const suaraBenar = document.getElementById("suara-benar");
+        const suaraSalah = document.getElementById("suara-salah");
+
+        const buttons = step.querySelectorAll("button");
+        buttons.forEach(btn => btn.disabled = true);
+
+        if (status === "benar") {
+          feedback.innerHTML = "✅ Hebat! Kamu benar!";
+          feedback.style.color = "green";
+          suaraBenar.play();
+          suaraBenar.onended = unlock;
+        } else {
+          feedback.innerHTML = "❌ Yuk coba lagi!";
+          feedback.style.color = "red";
+          suaraSalah.play();
+          suaraSalah.onended = unlock;
+        }
+
+        function unlock() {
+          buttons.forEach(btn => btn.disabled = false);
+          isLocked = false;
+        }
+      }
+
+    </script>
+</body>
+
+</html>
