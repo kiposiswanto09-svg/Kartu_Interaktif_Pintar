@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kintar - ayam </title>
+  <link rel="stylesheet" href="bebek.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+
+<body>
+  <div class="utama">
+    <!-- Navigasi -->
+    <header class="nav-container">
+      <div class="nav-logo">
+        <i id="nav-on" class="fa fa-bars" aria-label="Buka Menu"></i>
+      </div>
+    </header>
+
+    <nav id="nav-menu" class="close" aria-label="Menu Navigasi">
+      <div class="nav-menu-action">
+        <h4>kintar</h4>
+        <i id="nav-close" class="fa fa-xmark" aria-label="Tutup Menu"></i>
+      </div>
+      <ul class="nav-list-container">
+        <li class="nav-list"><i class="fa fa-house"></i><a href="index.html">Home</a></li>
+        <li class="nav-list"><i class="fa-regular fa-circle-dot"></i><a href="Tentang.html">Tentang Saya</a></li>
+        <li class="nav-list"><i class="fa fa-code-branch"></i><a href="Hubungi.html">Hubungi Saya</a></li>
+      </ul>
+    </nav>
+
+    <!-- Konten -->
+    <main class="content">
+
+      <!-- Judul + Gambar + Suara -->
+      <section class="info-step active">
+        <h2 onclick="playAudio('audioJudul')" class="klik-audio">
+          ayam 
+        </h2>
+        <audio id="audioJudul" src="ayam.mp3"></audio>
+        
+<video src="ayam GIF.mp4"
+       width="50%"
+       autoplay
+       loop
+       muted
+       playsinline>
+</video>
+
+        <audio id="audioFoto" src="ini ayam.mp3"></audio>
+        <p class="source">
+          sumber gambar:
+          <a href="https://media.istockphoto.com/id/831791190/id/foto/ayam.jpg?s=612x612&w=0&k=20&c=iQvGjzegmmvteRg93HA3WbcB0_rNv2o8ytMO9PVb-vY=" 
+          target="_blank">iStock.com</a>
+        </p>
+
+        <h3 onclick="playAudio('suaraayam')" class="klik-audio">
+          suara ayam
+        </h3>
+        <audio id="suaraayam" src="suara ayam.mp3"></audio>
+
+        <audio controls>
+          <source src="audio ayam.mp3" type="audio/mpeg">
+          Browser Anda tidak mendukung audio.
+        </audio>
+
+        <p class="source">
+          sumber audio:
+          <a href="" target="_blank">TikTok</a>
+        </p>
+        <button class="next-btn">▶ lanjut</button>
+      </section>
+
+      <!-- ================= HALAMAN MENU ================= -->
+      <section id="materi" class="info-step menu-page">
+        <h2>materi ayam</h2>
+
+        <button onclick="goToStepById('tubuh')">bagian tubuh ayam</button>
+        <button onclick="goToStepById('bergerak')">cara bergerak ayam</button>
+        <button onclick="goToStepById('pertumbuhan')">pertumbuhan ayam</button>
+        <button onclick="goToStepById('perkembang')">perkembangan ayam</button>
+        <button onclick="goToStepById('makanan')">makanan ayam</button>
+        <button onclick="goToStepById('soal')">pertanyaan ayam</button>
+        <button class="prev-btn">◀ kembali</button>
+      </section>
+      <!-- Bagian tubuh hewan -->
+      <section id="tubuh" class="info-step menu-page">
+<div class="ciri-ciri">
+<img onclick="playAudio('ini ayam')" class="klik-audio"
+                  src="https://png.pngtree.com/png-vector/20240315/ourmid/pngtree-chicken-hen-png-image_11968770.png"
+         alt="ayam">
+         <audio id="ini ayam" src="ini ayam.mp3"></audio>
+</div>
+
+
+        <h3> bagian tubuh </h3>
+        <div class="ciri-ciri">
+          <img src="paruh ayam.jpeg" alt="paruh ayam" 
+          onclick="playAudio('audioParuhjpg')" class="klik-audio">
+          <audio id="audioParuhjpg" src="ini paruh ayam.mp3"></audio>
+          <span onclick="playAudio('audioParuh')" class="teks-audio">
+            <strong></strong>
+            paruh ayam digunakan untuk mematuk dan makan
+          </span>
+          <audio id="audioParuh" src="paruh ayam digunakan.mp3"></audio>
+        </div>
+
+
+        <div class="ciri-ciri">
+          <img src="kaki ayam.jpg"
+            alt="kaki ayam" onclick="playAudio('audioKakijpg')" class="klik-audio">
+          <audio id="audioKakijpg" src="ini kaki ayam.mp3"></audio>
+          <span onclick="playAudio('audioKaki')" class="teks-audio">
+            <strong></strong>
+            kaki ayam digunakan untuk berjalan dan berlari
+          </span>
+          <audio id="audioKaki" src="kaki ayam digunakan .mp3"></audio>
+        </div>
+
+
+        <div class="ciri-ciri">
+          <img src="sayap ayam.jpeg" 
+          alt="sayap ayam" onclick="playAudio('audioSayapjpg')"
+            class="klik-audio">
+          <audio id="audioSayapjpg" src="ini sayap ayam.mp3"></audio>
+          <span onclick="playAudio('audioSayap')" class="teks-audio">
+            <strong></strong> 
+            sayap ayam digunakan untuk membantu ayam terbang dan melompat
+          </span>
+          <audio id="audioSayap" src="membantu ayam melomp.mp3"></audio>
+        </div>
+
+        <div class="ciri-ciri">
+          <img src="mata ayam.jpg"
+            alt="mata ayam" onclick="playAudio('audioMatajpg')" class="klik-audio">
+          <audio id="audioMatajpg" src="ini mata ayam.mp3"></audio>
+          <span onclick="playAudio('audioMata')" class="teks-audio">
+            <strong></strong> 
+         mata ayam digunakan untuk melihat
+          </span>
+          <audio id="audioMata" src="mata ayam digunakan .mp3"></audio>
+        </div>
+
+
+        <div class="ciri-ciri">
+          <img src="jengger ayam.jpeg" 
+          alt="Jengger ayam" onclick="playAudio('audioJenggerjpg')" class="klik-audio">
+          <audio id="audioJenggerjpg" src="ini jengger ayam.mp3"></audio>
+          <span onclick="playAudio('audioJengger')" class="teks-audio">
+            <strong></strong> 
+            jengger ayam ada di atas kepala ayam
+          </span>
+          <audio id="audioJengger" src="jengger ayam sebagai.mp3"></audio>
+        </div>
+
+
+        <div class="ciri-ciri">
+          <img src="ekor ayam.jpeg" 
+          alt="ekor ayam" onclick="playAudio('audioEkorjpg')" class="klik-audio">
+          <audio id="audioEkorjpg" src="ini ekor ayam.mp3"></audio>
+          <span onclick="playAudio('audioEkor')" class="teks-audio">
+            <strong></strong> 
+          ekor ayam membantu ayam menjaga keseimbangan
+          </span>
+          <audio id="audioEkor" src="ekor ayam membantu a.mp3"></audio>
+        </div>
+
+<div class="ciri-ciri">
+          <img src="https://png.pngtree.com/png-vector/20240731/ourmid/pngtree-quill-feather-design-png-image_13280092.png" 
+          alt="bulu ayam" onclick="playAudio('audioBulujpg')" class="klik-audio">
+          <audio id="audioBulujpg" src=""></audio>
+          <span onclick="playAudio('audioBulu')" class="teks-audio">
+            <strong></strong> 
+           bulu ayam melindungi tubuh ayam dari panas, dingin, dan hujan
+          </span>
+          <audio id="audioBulu" src=""></audio>
+        </div>
+
+
+        <div class="nav-btn">
+          <button class="prev-btn">◀ kembali</button>
+          <button class="next-btn">▶ lanjut</button>
+        </div>
+      </section>
+      <!--menu bagian tubuh hewan-->
+      <section id="bagian" class="info-step menu-page">
+        <button onclick="goToStepById('3D')">3D ayam bagian tubuh</button>
+        <button onclick="goToStepById('videobagian')">video bagian tubuh ayam animasi</button>
+        <button class="prev-btn">◀ kembali</button>
+      </section>
+      <!--3D hewan bagian tubuh hewan-->
+      <section id="3D" class="info-step">
+  <h3>3D Ayam Bagian Tubuh</h3>
+
+  <iframe
+    src="https://sketchfab.com/models/c37f16776697416cafc5e97dc41721c9/embed"
+    width="100%"
+    height="400"
+    title="3D Ayam"
+    frameborder="0"
+    allowfullscreen
+    allow="autoplay; fullscreen; xr-spatial-tracking">
+  </iframe>
+
+  <div class="nav-btn">
+    <button class="prev-btn">◀ kembali</button>
+  </div>
+</section>
+
+      <!-- video bagian tubuh hewan -->
+      <section id="videobagian" class="info-step">
+        <h3>video bagian tubuh ayam animasi</h3>
+
+        <iframe width="100%" height="315" 
+        src="https://www.youtube.com/embed/HoMOnGiJ_QE" 
+        frameborder="0"
+          allowfullscreen>
+        </iframe>
+
+        <p class="source">
+          sumber video:
+          <a href="https://youtu.be/HoMOnGiJ_QE?si=vrt0oBEUr0onJRPZ" 
+          target="_blank">YouTube</a>
+        </p>
+
+        <div class="nav-btn">
+          <button onclick="goToStepById('bagian')"> ◀ kembali</button>
+        </div>
+      </section>
+      <!-- hewan bergerak -->
+      <section id="bergerak" class="info-step">
+        <h3>ayam bergerak</h3>
+
+        <div class="ciri-ciri">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbgQNDcZ5jXMieMI0tPrxQ7MgdVRChoCBXA4e68y_z8A&s=10" 
+          alt="ayam berjalan">
+          <span onclick="playAudio('audioJalan')" class="teks-audio">
+           ayam berjalan
+          </span>
+          <audio id="audioJalan" src=""></audio>
+        </div>
+
+        <div class="ciri-ciri">
+          <img src="https://media.istockphoto.com/id/1040767082/id/foto/ayam-terbang-dengan-latar-belakang-putih-ayam-menyebar-di-udara.jpg?s=612x612&w=0&k=20&c=fkWeqDo0UXhjK0R8aj358gnAziDb12-6SyJTfp4jYuc="
+            alt="ayam terbanng">
+          <span onclick="playAudio('audioRenang')" class="teks-audio">
+            ayam lompat
+          </span>
+          <audio id="audioRenang" src=""></audio>
+        </div>
+
+
+        <div class="nav-btn">
+          <button onclick="goToStepById('materi')"> ◀ kembali</button>
+          <button class="next-btn">▶ lanjut</button>
+        </div>
+      </section>
+      <!--menu hewan bergerak-->
+      <section id="videoBergerak" class="info-step menu-page">
+        <button onclick="goToStepById('videoBerenang')">video ayam terbang</button>
+        <button onclick="goToStepById('videoanimasi')">lagu ayam</button>
+        <button class="prev-btn">◀ kembali</button>
+      </section>
+      <!--hewan bergerak-->
+      <section id="videoBerenang" class="info-step">
+        <h3>video ayam terbang</h3>
+
+        <iframe width="100%" height="315" 
+        src="https://www.youtube.com/embed/fC6ze3gInBM" 
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+
+        <p class="source">
+          sumber video:
+          <a href="https://youtube.com/shorts/fC6ze3gInBM?si=mY0bR3FKFWhIMrSp" target="_blank">YouTube</a>
+        </p>
+
+        <div class="nav-btn">
+          <button class="prev-btn">◀ kembali</button>
+        </div>
+      </section>
+      <!--lagu hewan bergerak-->
+      <section id="videoanimasi" class="info-step">
+  <h3>Lagu Ayam</h3>
+
+  <iframe
+    width="100%"
+    height="315"
+    src="https://www.youtube.com/embed/fC6ze3gInBM"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+
+  <p class="source">
+    sumber video:
+    <a href="https://youtube.com/shorts/fC6ze3gInBM" target="_blank">
+      YouTube
+    </a>
+  </p>
+
+  <div class="nav-btn">
+    <button onclick="goToStepById('videoBergerak')">◀ kembali</button>
+  </div>
+</section>
+
+
+      <!-- pertumbuhan hewan -->
+      <section id="pertumbuhan" class="info-step">
+        <h3>pertumbuhan ayam</h3>
+
+        <div class="ciri-ciri">
+          <img
+            src="https://png.pngtree.com/png-vector/20250606/ourmid/pngtree-chicken-eggs-isolated-on-transparent-background-png-image_16464753.png"
+            alt="telur ayam" onclick="playAudio('audioTelurjpg')" class="klik-audio">
+          <audio id="audioTelurjpg" src="ini telur ayam.mp3"></audio>
+          <span onclick="playAudio('audioTelur')" class="teks-audio">
+            telur ayam menetas menjadi anak ayam
+          </span>
+          <audio id="audioTelur" src="telur ayam akan mene.mp3"></audio>
+        </div>
+
+        <div class="ciri-ciri">
+          <img src="https://png.pngtree.com/png-vector/20240827/ourmid/pngtree-cute-fluffy-baby-chick-clip-art-isolated-on-black-background-png-image_13636808.png" 
+          alt="anak ayam"
+            onclick="playAudio('audioAnakjpg')" class="klik-audio">
+          <audio id="audioAnakjpg" src="ini anak ayam.mp3"></audio>
+          <span onclick="playAudio('audioAnak')" class="teks-audio">
+             anak ayam tumbuh dan menjadi besar
+          </span>
+          <audio id="audioAnak" src="anak ayam tumbuh dar.mp3"></audio>
+        </div>
+
+        <div class="ciri-ciri">
+          <img src="https://png.pngtree.com/png-vector/20240315/ourmid/pngtree-chicken-hen-png-image_11968770.png" 
+          alt="ayam dewasa"
+            onclick="playAudio('audioDewasajpg')" class="klik-audio">
+          <audio id="audioDewasajpg" src="ini ayam dewasa.mp3"></audio>
+          <span onclick="playAudio('audioDewasa')" class="teks-audio">
+             ayam dewasa bisa bertelur
+          </span>
+          <audio id="audioDewasa" src="ayam dewasa sudah be.mp3"></audio>
+        </div>
+
+        <div class="nav-btn">
+          <button onclick="goToStepById('materi')">◀ Kembali</button>
+          <button class="next-btn">▶ lanjut</button>
+        </div>
+      </section>
+      <!--menu pertumbuhan-->
+      <section id="menu-pertumbuhan" class="info-step menu-page">
+        <button onclick="goToStepById('telurmenetas')">video pertumbuhan telur menetas</button>
+        <button onclick="goToStepById('bebekdewasa')">video pertumbuhan anak ayam sampai bebek dewasa</button>
+        <button class="prev-btn">◀ kembali</button>
+      </section>
+      <!--video pertumbuhan telur-->
+      <section id="telurmenetas" class="info-step">
+        <h3>video pertumbuhan telur menetas</h3>
+
+        <iframe width="100%" height="315" 
+        src="https://www.youtube.com/embed/m4Gw7CF7W7U" 
+        title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+
+        <p class="source">
+          sumber video:
+          <a href="https://vt.tiktok.com/ZSVkT6eQ4/" target="_blank">tiktok</a>
+        </p>
+
+        <div class="nav-btn">
+          <button class="prev-btn">◀ kembali</button>
+        </div>
+      </section>
+      <!--video pertumbuhan bebek-->
+      <section id="bebekdewasa" class="info-step">
+  <h3>Video Pertumbuhan Anak Ayam Sampai Ayam Dewasa</h3>
+
+  <iframe
+    width="100%"
+    height="315"
+    src="https://www.youtube.com/embed/iW5FTBCXJ4I"
+    title="Video Pertumbuhan Ayam"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+
+  <p class="source">
+    sumber video:
+    <a href="https://youtu.be/iW5FTBCXJ4I?si=0f4hD-8TQMGurw-d" target="_blank">
+      YouTube
+    </a>
+  </p>
+
+  <div class="nav-btn">
+    <button onclick="goToStepById('menu-pertumbuhan')">◀ kembali</button>
+  </div>
+</section>
+      <!-- makanan hewan -->
+      <section id="makanan" class="info-step">
+        <h3>makanan ayam</h3>
+
+        <div class="ciri-ciri">
+          <img
+            src="https://png.pngtree.com/png-vector/20241023/ourmid/pngtree-rice-plant-illustration-for-farming-and-agriculture-png-image_14147833.png"
+            alt="padi">
+          <span onclick="playAudio('audioPadi')" class="teks-audio">
+            ayam makan padi
+          </span>
+          <audio id="audioPadi" src=""></audio>
+        </div>
+
+        <div class="ciri-ciri">
+          <img src="https://e7.pngegg.com/pngimages/117/966/png-clipart-worms-worms.png" 
+          alt="cacing">
+          <span onclick="playAudio('audioCacing')" class="teks-audio">
+            ayam makan cacing
+          </span>
+          <audio id="audioCacing" src=""></audio>
+        </div>
+
+        <div class="ciri-ciri">
+          <img
+            src="https://e7.pngegg.com/pngimages/884/625/png-clipart-macro-graphy-of-red-ladybird-beetle-ladybird-ladybug-insects-desktop-wallpaper.png"
+            alt="serangga kecil">
+          <span onclick="playAudio('audioSerangga')" class="teks-audio">
+            ayam makan serangga kecil
+          </span>
+          <audio id="audioSerangga" src=""></audio>
+        </div>
+
+        <div class="ciri-ciri">
+          <img src="https://medialampung.disway.id/upload/0387648881d7b82e8b7bde578b51223c.jpg" 
+          alt="keong" onclick="playAudio('audioKeongjpg')" class="teks-audio">
+          <audio id="audioKeongjpg" src="ini keong.mp3"></audio>
+          <span onclick="playAudio('audioKeong')" class="teks-audio">
+            ayam makan keong
+          </span>
+          <audio id="audioKeong" src=""></audio>
+        </div>
+
+        <div class="nav-btn">
+          <button onclick="goToStepById('materi')">◀ Kembali</button>
+        </div>
+      </section>
+      <!--perkembang biak hewan-->
+      <section id="perkembang" class="info-step">
+        <h3>perkembangbiakan ayam</h3>
+
+        <div class="ciri-ciri">
+          <img
+            src="https://png.pngtree.com/png-vector/20250606/ourmid/pngtree-chicken-eggs-isolated-on-transparent-background-png-image_16464753.png"
+            alt="telur ayam" onclick="playAudio('audioTelurjpg')" class="klik-audio">
+          <audio id="audioTelurjpg" src="ini telur ayam.mp3"></audio>
+          <span onclick="playAudio('audioBertelur')" class="teks-audio">
+            induk ayam bertelur
+          </span>
+          <audio id="audioBertelur" src=""></audio>
+        </div>
+
+        <div class="ciri-ciri">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjP4wGFAGtVKVjitZOQRVGrVM8TS4OwgLcU2itQaExwA&s=10" 
+          alt="ayam mengerami" onclick="playAudio('audioMengeramijpg')"
+            class="klik-audio">
+          <audio id="audioMengeramijpg" src=""></audio>
+          <span onclick="playAudio('audioErami')" class="teks-audio">
+            induk ayam mengerami telur
+          </span>
+          <audio id="audioErami" src=""></audio>
+        </div>
+
+        <div class="ciri-ciri">
+          <img src="anak telur ayam menetas.jpeg"
+            alt="telur-ayam-menetas" onclick="playAudio('audioMenetasjpg')" class="klik-audio">
+          <audio id="audioMenetasjpg" src=""></audio>
+          <span onclick="playAudio('audioMenetas')" class="teks-audio">
+            telur menetas menjadi anak ayam
+          </span>
+          <audio id="audioMenetas" src=""></audio>
+        </div>
+
+        <div class="ciri-ciri">
+          <img src="https://png.pngtree.com/png-vector/20250324/ourmid/pngtree-brown-chicken-hen-standing-proudly-in-a-full-body-view-png-image_15862864.png" 
+          alt="ayam dewasa" onclick="playAudio('audioBebekjpg')"
+            class="klik-audio">
+          <audio id="audioBebekjpg" src=""></audio>
+          <span onclick="playAudio('AudioayamDewasa')" class="teks-audio">
+             ayam dewasa bertelur lagi
+          </span>
+          <audio id="AudioayamDewasa" src=""></audio>
+        </div>
+
+        <div class="nav-btn">
+          <button onclick="goToStepById('materi')">◀ Kembali</button>
+          <button class="next-btn">▶ Lanjut</button>
+        </div>
+      </section>
+      <!--video perkembang biak hewan-->
+      <section class="info-step">
+        <h3>video ayam bertelur</h3>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/kDW0T1otEFA" 
+        frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        <p class="source">
+          sumber video:
+          <a href="https://vt.tiktok.com/ZSVkc9FRW/" target="_blank">tiktok</a>
+        </p>
+        <div class="nav-btn">
+          <button onclick="stopVideo(); nextStep()" class="prev-btn">◀ kembali</button>
+        </div>
+      </section>
+      <!-- Aktivitas -->
+
+      <section id="soal" class="info-step">
+        <h2>ayam bergerak dengan cara?</h2>
+
+        <button onclick="jawaban('salah')">
+  <img src="https://png.pngtree.com/png-vector/20240612/ourmid/pngtree-albino-burmese-python-snake-nature-orange-png-image_12674289.png" 
+  alt="ular">
+  merayap
+</button>
+
+<button onclick="jawaban('benar')">
+  <img src="https://png.pngtree.com/png-clipart/20220124/ourmid/pngtree-native-chicken-commercially-available-element-material-png-image_4255613.png" 
+  alt="ayam">
+  berjalan
+</button>
+
+<button onclick="jawaban('salah')">
+  <img src="https://static.vecteezy.com/system/resources/thumbnails/042/236/023/small_2x/ai-generated-tropical-fish-isolated-on-transparent-background-png.png" 
+  alt="ikan">
+  ikan
+</button>
+
+        <p id="feedback-makanan" class="feedback"></p>
+
+        <div class="nav-btn">
+          <button onclick="goToStepById('materi')"> ◀ kembali</button>
+          <button class="next-btn">▶ Lanjut</button>
+        </div>
+      </section>
+
+      <!-- STEP 7: Soal 2 -->
+      <section class="info-step">
+        <h2>suara hewan ini milik siapa?</h2>
+        <audio controls>
+          <source src="audio ayam.mp3" type="audio/mpeg">
+          Browser Anda tidak mendukung audio.
+        </audio>
+
+        <button onclick="jawaban('salah', 'feedback-tempat')">
+          <img src="https://pngimg.com/uploads/duck/duck_PNG5029.png" alt="bebek">bebek</button>
+        <button onclick="jawaban('salah', 'feedback-tempat')">
+          <img src="https://www.purwakartaupdate.com/wp-content/uploads/2021/09/burung-pipit.jpg"
+            alt="burung">burung</button>
+        <button onclick="jawaban('benar', 'feedback-tempat')">
+          <img
+            src="https://png.pngtree.com/png-clipart/20220124/ourmid/pngtree-native-chicken-commercially-available-element-material-png-image_4255613.png"
+            alt="ayam">ayam</button>
+
+        <p id="feedback-tempat" class="feedback"></p>
+
+        <div class="nav-btn">
+          <button class="prev-btn">◀ kembali</button>
+          <button class="next-btn">▶ lanjut</button>
+        </div>
+      </section>
+      <section class="info-step">
+        <div class="ciri-ciri">
+          <img src="paruh ayam.jpeg" alt="paruh bebek">
+        </div>
+        <h2>bagian tubuh ini milik hewan siapa?</h2>
+
+        <button onclick="jawaban('benar', 'feedback-tempat')">
+          <img
+            src="https://png.pngtree.com/png-clipart/20220124/ourmid/pngtree-native-chicken-commercially-available-element-material-png-image_4255613.png"
+            alt="ayam">ayam</button>
+        <button onclick="jawaban('salah', 'feedback-tempat')">
+          <img src="https://pngimg.com/uploads/duck/duck_PNG5029.png" 
+          alt="bebek">bebek</button>
+        <button onclick="jawaban('salah', 'feedback-tempat')">
+          <img
+            src="https://static.vecteezy.com/system/resources/thumbnails/042/236/023/small_2x/ai-generated-tropical-fish-isolated-on-transparent-background-png.png"
+            alt="ikan">ikan</button>
+
+        <p id="feedback-tempat" class="feedback"></p>
+
+        <div class="nav-btn">
+          <button class="prev-btn">◀ kembali</button>
+          <button class="next-btn">▶ lanjut</button>
+        </div>
+      </section>
+      <section class="info-step">
+        <div class="ciri-ciri">
+          <img
+            src="https://png.pngtree.com/png-vector/20250606/ourmid/pngtree-chicken-eggs-isolated-on-transparent-background-png-image_16464753.png"
+            alt="ayam bertelur">
+        </div>
+        <h2>telur ini milik siapa?</h2>
+
+        <button onclick="jawaban('benar', 'feedback-tempat')">
+          <img
+            src="https://png.pngtree.com/png-clipart/20220124/ourmid/pngtree-native-chicken-commercially-available-element-material-png-image_4255613.png"
+            alt="ayam">ayam</button>
+        <button onclick="jawaban('salah', 'feedback-tempat')">
+          <img src="https://www.purwakartaupdate.com/wp-content/uploads/2021/09/burung-pipit.jpg"
+            alt="burung">burung</button>
+        <button onclick="jawaban('salah', 'feedback-tempat')">
+          <img src="https://pngimg.com/uploads/duck/duck_PNG5029.png" alt="bebek">bebek</button>
+
+        <p id="feedback-tempat" class="feedback"></p>
+
+        <div class="nav-btn">
+          <button class="prev-btn">◀ kembali</button>
+          <button class="next-btn">▶ lanjut</button>
+        </div>
+      </section>
+      <!-- STEP 8: Soal 3 -->
+      <section class="info-step">
+        <h2>makanan ayam?</h2>
+
+        <button onclick="jawaban('salah', 'feedback-surai')">
+          <img src="https://s0.bukalapak.com/attachment/068632/jenis_batu_alam_image_1.jpg" alt="batu">batu</button>
+        <button onclick="jawaban('salah', 'feedback-surai')">
+          <img src="https://www.purwakartaupdate.com/wp-content/uploads/2021/09/burung-pipit.jpg"
+            alt="burung_pipit">burung</button>
+        <button onclick="jawaban('benar', 'feedback-surai')">
+          <img
+            src="https://png.pngtree.com/png-vector/20241023/ourmid/pngtree-rice-plant-illustration-for-farming-and-agriculture-png-image_14147833.png"
+            alt="padi">padi</button>
+
+        <p id="feedback-surai" class="feedback"></p>
+        <div class="nav-btn">
+          <button class="prev-btn">◀ kembali</button>
+        </div>
+      </section>
+
+      <!-- Audio -->
+      <audio id="suara-benar" src="Hebat! Kamu Benar.mp3"></audio>
+      <audio id="suara-salah" src="salah yuk coba lagi.mp3"></audio>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 KINTAR - Kartu Interaktif Pintar. Dibuat oleh Taufik Hidayat - Mahasiswa UNTIRTA</p>
+      <div class="sosmed">
+        <a href="https://facebook.com/taufik.hidayat.416718" target="_blank"><img
+            src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+        <a href="https://instagram.com/taufik._.hdyt" target="_blank"><img
+            src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+        <a href="https://wa.me/082258038059" target="_blank"><img
+            src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+        <a href="mailto:taufikkipo3@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+            alt="Gmail"></a>
+      </div>
+    </footer>
+    <script>
+
+     /* ================= NAVIGATION ================= */
+      const navOnBtn = document.getElementById("nav-on");
+      const navCloseBtn = document.getElementById("nav-close");
+      const navMenu = document.getElementById("nav-menu");
+
+      if (navOnBtn && navCloseBtn && navMenu) {
+        navOnBtn.addEventListener("click", () => {
+          navMenu.classList.remove("close");
+          navMenu.classList.add("open");
+        });
+
+        navCloseBtn.addEventListener("click", () => {
+          navMenu.classList.remove("open");
+          navMenu.classList.add("close");
+        });
+      }
+
+      /* ================= SLIDE SYSTEM ================= */
+      let currentStep = 0;
+      const steps = document.querySelectorAll(".info-step");
+
+      function showStep(index) {
+        stopAllMedia();
+        steps.forEach(step => step.classList.remove("active"));
+        steps[index].classList.add("active");
+      }
+
+      document.addEventListener("click", function (e) {
+
+        if (e.target.classList.contains("next-btn")) {
+          if (currentStep < steps.length - 1) {
+            currentStep++;
+            showStep(currentStep);
+          }
+        }
+
+        if (e.target.classList.contains("prev-btn")) {
+          if (currentStep > 0) {
+            currentStep--;
+            showStep(currentStep);
+          }
+        }
+      });
+
+      /* ================= STOP ALL MEDIA ================= */
+      function stopAllMedia() {
+
+        // Stop audio & video biasa
+        document.querySelectorAll("audio, video").forEach(media => {
+          media.pause();
+          media.currentTime = 0;
+        });
+
+        // Reset semua iframe (YouTube otomatis berhenti)
+        document.querySelectorAll("iframe").forEach(frame => {
+          const src = frame.src;
+          frame.src = src;
+        });
+      }
+
+      /* ================= AUDIO PLAY ================= */
+      function playAudio(id) {
+        stopAllMedia();
+        const audio = document.getElementById(id);
+        if (audio) audio.play();
+      }
+
+      /* ================= GO TO STEP ================= */
+      function goToStepById(id) {
+        stopAllMedia();
+
+        steps.forEach((step, index) => {
+          step.classList.remove("active");
+
+          if (step.id === id) {
+            step.classList.add("active");
+            currentStep = index;
+          }
+        });
+      }
+
+      /* ================= SOAL SYSTEM ================= */
+      let isLocked = false;
+
+      function jawaban(status) {
+        if (isLocked) return;
+        isLocked = true;
+
+        const step = document.querySelector(".info-step.active");
+        const feedback = step.querySelector(".feedback");
+        const suaraBenar = document.getElementById("suara-benar");
+        const suaraSalah = document.getElementById("suara-salah");
+
+        const buttons = step.querySelectorAll("button");
+        buttons.forEach(btn => btn.disabled = true);
+
+        if (status === "benar") {
+          feedback.innerHTML = "✅ Hebat! Kamu benar!";
+          feedback.style.color = "green";
+          suaraBenar.play();
+          suaraBenar.onended = unlock;
+        } else {
+          feedback.innerHTML = "❌ Yuk coba lagi!";
+          feedback.style.color = "red";
+          suaraSalah.play();
+          suaraSalah.onended = unlock;
+        }
+
+        function unlock() {
+          buttons.forEach(btn => btn.disabled = false);
+          isLocked = false;
+        }
+      }
+    </script>
+</body>
+
+</html>
