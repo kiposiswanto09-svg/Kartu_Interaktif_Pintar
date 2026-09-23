@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kintar - Belajar Inklusif Interaktif</title>
+  <link rel="stylesheet" href="Kintar.css" />
+</head>
+<body>
+    <div>
+        <!--Navigation-->
+          <nav>
+            <ul class="nav-list-container">
+                <li class="nav-list"><a href="Kintar.html">Home</a></li>
+                <li class="nav-list"><a href="Tentang_Saya.html">Tentang Saya</a></li>
+               <li class="nav-list"><a href="Kintar_Hubungi_Saya.html">Hubungi Saya</a></li>
+                <li class="nav-list"><a href="Kintar.html #produk">Produk</a></li>
+                <li onclick="scrollToSection('Kintar.html #manfaat')" class="nav-list">Manfaat</li>
+                <li onclick="scrollToSection('Kintar.html #lokasi')" class="nav-list">Lokasi</li>
+            </ul>
+        </nav>
+        <!--Tentang Saya-->
+        <div class="tentang-container">
+            <div class="tentang-kiri">
+                <img src="Foto Gw.jpg" alt="Foto Profil">
+                <div class="bawah-container">
+                    <div class="kolom-bawah bagian">
+                        <h3>Hobi</h3>
+                            <p>GYM, Lari, Coding</p>
+                        <h3>MOTTO Hidup</h3>
+                            <p>"Meningkatkan Teknologi untuk membantu makhluk hidup"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tentang-kanan">
+                <div>
+                    <h2>Tentang Saya</h2>
+                        <p>Saya adalah calon guru yang memiliki ketertarikan dan kepedulian tinggi terhadap pendidikan anak disabilitas. Saya mudah berkomunikasi dengan anak-anak berkebutuhan khusus dari berbagai hambatan dan telah memiliki pengalaman langsung mengajar mereka baik di rumah maupun di sekolah.</p>
+                        <p>Saya juga mendalami dunia coding dan ingin menciptakan media pembelajaran berbasis website yang ramah disabilitas agar pembelajaran lebih inklusif, menyenangkan, dan mudah dipahami oleh semua anak.</p>
+                </div>
+                <div class="bawah-container">
+                    <div class="kolom-bawah bagian">
+                        <h3>Pengalaman</h3>
+                            <ul>
+                                <li>KKM (Kuliah Kerja Mahasiswa) Sebagai Ketua</li>
+                                <li>Les Privat Anak disabilitas</li>
+                                <li>Volunter PPM (Pengabdian dan Pemberdayaan Masyarakat) Sebagai Logistik</li>
+                            </ul>
+                    </div>
+                    <div class="kolom-bawah bagian">
+                        <h3>Pendidikan</h3>
+                            <ul>
+                                <li>SD Negeri 13 Kota Serang</li>
+                                <li>SMP Negeri 7 Kota Serang</li>
+                                <li>SMA Negeri 1 Kota Serang</li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>        
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2025 Kintar. Dibuat oleh Taufik Hidayat - Mahasiswa UNTIRTA</p>
+        <div class="sosmed">
+            <a href="https://www.facebook.com/taufik.hidayat.416718" target="_blank"><img src="FB.png" alt="Facebook"></a>
+            <a href="https://instagram.com/kiposis_official" target="_blank"><img src="IG.png" alt="Instagram"></a>
+            <a href="https://wa.me/082258038059" target="_blank"><img src="WA.png" alt="WhatsApp"></a>
+            <a href="mailto:taufikkipo3@gmail.com"><img src="Gmail.png" alt="Gmail"></a>
+        </div>
+        </footer>
+    </div>
+    <script>
+        // Smooth Scroll ke Section
+        function scrollToSection(id) {
+            const section = document.getElementById(id);
+                if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
+            }
+            }
+
+        // Deteksi saat foto masuk layar untuk animasi
+        window.addEventListener("scroll", function () {
+            const foto = document.querySelector(".profile");
+            const pos = foto.getBoundingClientRect().top;
+            const tinggiLayar = window.innerHeight;
+
+                if (pos < tinggiLayar - 100) {
+                foto.classList.add("visible");
+                }
+                });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("CV interaktif siap digunakan!");
+        });
+    </script>
+</body>
+</html>
